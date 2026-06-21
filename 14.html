@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>14주차 퀴즈 - 가족 스트레스</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* 단답형 입력창 */
+        .short-answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        /* 정답 버튼 및 해설 */
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #475569;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 중앙 네비게이션 바 -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html">13주차</a>
+        <a href="14.html" class="active">14주차</a>
+        <a href="15.html">15주차</a>
+        <a href="서술형.html">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>14주차 학습 진단 퀴즈: 가족 스트레스</h1>
+
+    <form id="quizForm" onsubmit="return false;">
+        
+        <h2>I. 5지선다형 문제 (1~15)</h2>
+
+        <!-- Q1 -->
+        <div class="quiz-item">
+            <div class="question">1. 셀리에(Selye)의 생리학적 스트레스 이론에서 신체가 스트레스에 대해 저항하고 균형을 되돌리려고 노력하지만, 내부적으로 기능이 저하되어 감염 저항력 저하나 위궤양, 만성불안 등이 유발될 수 있는 일반적응증후군의 단계는 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="1"> 경보반응단계</label></li>
+                <li><label><input type="radio" name="q1" value="2"> 저항기</label></li>
+                <li><label><input type="radio" name="q1" value="3"> 소진기</label></li>
+                <li><label><input type="radio" name="q1" value="4"> 자원평가기</label></li>
+                <li><label><input type="radio" name="q1" value="5"> 맥락조정기</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(1, '2', '저항기에는 신체가 스트레스에 저항하여 균형을 되돌리려고 애쓰며, 겉으로는 정상이지만 내부 기능 저하가 생길 수 있습니다.')">정답 확인</button>
+            <div id="res1" class="result-box"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-item">
+            <div class="question">2. 라자루스(Lazarus)의 심리학적 스트레스 이론에 근거할 때, 스트레스에 대한 설명으로 옳은 것을 고르시오.</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="1"> 스트레스는 정서적, 심리적 요인을 완전히 배제한 순수 생리학적 자극이다.</label></li>
+                <li><label><input type="radio" name="q2" value="2"> 외부적 사건 자체가 절대적이고 객관적인 스트레스 크기를 결정한다.</label></li>
+                <li><label><input type="radio" name="q2" value="3"> 스트레스는 특정한 외부 자극이 아니라 개인의 심리 요인과 인지 평가, 즉 개인과 환경과의 관계이다.</label></li>
+                <li><label><input type="radio" name="q2" value="4"> 1차 평가는 대처 방식을 선택하는 단계이며, 2차 평가는 개인의 안녕을 평가하는 단계이다.</label></li>
+                <li><label><input type="radio" name="q2" value="5"> 개인의 대처자원에는 물질적 자원과 사회적 지위만 포함되며 개인의 신념은 제외된다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(2, '3', '라자루스는 일상의 사건 자체가 스트레스를 유발하기보다 개인의 심리 요인, 인지 평가, 즉 개인과 환경과의 관계가 스트레스를 결정한다고 봅니다.')">정답 확인</button>
+            <div id="res2" class="result-box"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-item">
+            <div class="question">3. 홈스와 라헤(Holmes & Rahe)의 사회재적응률척도(SRRS)에 대한 설명으로 적절하지 않은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="1"> 인생에서 겪는 스트레스 경험 변화가 질병을 유발한다고 가정한다.</label></li>
+                <li><label><input type="radio" name="q3" value="2"> 총 43개의 생활사건을 나열하여 스트레스 수준을 측정한다.</label></li>
+                <li><label><input type="radio" name="q3" value="3"> 여러 생활사건 중 '배우자의 죽음'이 가장 높은 스트레스 점수(100점)를 기록했다.</label></li>
+                <li><label><input type="radio" name="q3" value="4"> 결혼, 임신, 진학 등 인생의 긍정적인 사건은 스트레스 원으로 기능하지 않는다.</label></li>
+                <li><label><input type="radio" name="q3" value="5"> 삶에서의 변화 그 자체가 스트레스 원으로 작용한다는 점에 초점을 맞춘다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(3, '4', '사회재적응률척도에서는 결혼, 임신, 진학, 개인의 성취 등 인생의 긍정적인 변화 사건 역시 스트레스로 기능한다고 봅니다.')">정답 확인</button>
+            <div id="res3" class="result-box"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-item">
+            <div class="question">4. 브론펜브레너(Bronfenbrenner)의 생태체계적 관점에서 '개인이 직접적인 경험을 하지는 않지만 개인에게 큰 영향력을 행사하는 사회적 환경(예: 부모의 직장, 부모의 사회관계망 등)'에 해당하는 체계는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="1"> 미시체계</label></li>
+                <li><label><input type="radio" name="q4" value="2"> 중간체계</label></li>
+                <li><label><input type="radio" name="q4" value="3"> 외체계</label></li>
+                <li><label><input type="radio" name="q4" value="4"> 거시체계</label></li>
+                <li><label><input type="radio" name="q4" value="5"> 시간체계</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(4, '3', '외체계는 아동이나 개인이 직접 참여하지는 않지만 그가 속한 미시체계에 영향을 주는 사회적 환경을 의미합니다.')">정답 확인</button>
+            <div id="res4" class="result-box"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-item">
+            <div class="question">5. 브론펜브레너의 생태체계적 관점에서 '가장 직접적인 접촉을 하며 상호작용하는 체계(예: 가족, 친구, 유아원, 또래 등)'를 의미하는 용어는 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="1"> 미시체계</label></li>
+                <li><label><input type="radio" name="q5" value="2"> 중간체계</label></li>
+                <li><label><input type="radio" name="q5" value="3"> 외체계</label></li>
+                <li><label><input type="radio" name="q5" value="4"> 거시체계</label></li>
+                <li><label><input type="radio" name="q5" value="5"> 시간체계</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(5, '1', '개인이 일상에서 가장 직접적으로 대면하고 소통하는 환경적 맥락은 미시체계입니다.')">정답 확인</button>
+            <div id="res5" class="result-box"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="quiz-item">
+            <div class="question">6. 르우벤 힐(Reuben Hill)이 제시한 ABC-X 모델에 대한 기본 설명으로 가장 적절한 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="1"> 가족 자원이 부족할 때 무조건 위기가 발생한다고 보는 단선적 이론이다.</label></li>
+                <li><label><input type="radio" name="q6" value="2"> 스트레스 사건(A)에 직면했을 때, 가족의 내·외적 자원(B)과 사건에 대한 가족원들의 인식(C) 수준에 따라 위기(X)의 정도가 결정된다고 본다.</label></li>
+                <li><label><input type="radio" name="q6" value="3"> 전쟁 이후 나타난 다문화 가족의 고용률 불평등을 해결하기 위해 도출된 정책 틀이다.</label></li>
+                <li><label><input type="radio" name="q6" value="4"> 외적 맥락 중 문화와 역사가 미치는 영향력만을 독립적으로 파악하는 모델이다.</label></li>
+                <li><label><input type="radio" name="q6" value="5"> 요구와 능력의 균형 유지를 전가족 상담 접수 단계에서 평가하기 위한 평정 도구이다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(6, '2', '힐의 ABC-X 모델은 사건, 자원, 인식의 상호작용적 조합을 통해 가족이 겪는 위기의 정도가 어떻게 정해지는지 설명합니다.')">정답 확인</button>
+            <div id="res6" class="result-box"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="quiz-item">
+            <div class="question">7. 가족생활주기 선상에서 정기적으로 일어나며 지속 기간이 비교적 짧고 예측이 가능하지만, 일시적으로 가족의 평정을 잃게 할 잠재력을 지닌 사건(예: 자녀의 입학, 가족원의 은퇴 등)은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="1"> 비규범적 사건</label></li>
+                <li><label><input type="radio" name="q7" value="2"> 규범적 사건</label></li>
+                <li><label><input type="radio" name="q7" value="3"> 모호한 상실 사건</label></li>
+                <li><label><input type="radio" name="q7" value="4"> 구조적 내적 스트레스원</label></li>
+                <li><label><input type="radio" name="q7" value="5"> 외체계적 변대전환 사건</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(7, '2', '생활주기 내에서 발달과정상 예측 가능하게 발생하는 사건은 규범적 사건입니다.')">정답 확인</button>
+            <div id="res7" class="result-box"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="quiz-item">
+            <div class="question">8. 폴린 보스(Boss, 1999)가 제시한 개념으로, 가족원의 물리적인 부재와 심리적인 존재 간의 괴리, 혹은 물리적 존재와 심리적 부재 간의 불일치를 설명하는 스트레스원 개념은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="1"> 누적 스트레스원</label></li>
+                <li><label><input type="radio" name="q8" value="2"> 비규범적 트라우마</label></li>
+                <li><label><input type="radio" name="q8" value="3"> 모호한 상실(Ambiguous Loss)</label></li>
+                <li><label><input type="radio" name="q8" value="4"> 정서적 단절 불균형</label></li>
+                <li><label><input type="radio" name="q8" value="5"> 거시체계적 전이</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(8, '3', '실종이나 이혼 등으로 물리적으로는 없지만 심리적으로 남아있거나, 치매 등으로 물리적으로는 있으나 심리적으로 부재하는 모순을 모호한 상실이라고 합니다.')">정답 확인</button>
+            <div id="res8" class="result-box"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="quiz-item">
+            <div class="question">9. 모호한 상실 중 '가족원이 물리적으로는 존재하고 있으나, 치매, 만성질환, 약물중독, 일중독 등으로 인해 심리적으로는 부재하는 상황'의 예시로 적절한 것은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="1"> 실종되거나 수감된 가족원</label></li>
+                <li><label><input type="radio" name="q9" value="2"> 전쟁으로 인해 떨어져 지내는 군인 부모</label></li>
+                <li><label><input type="radio" name="q9" value="3"> 이혼으로 인해 집을 떠난 전 배우자</label></li>
+                <li><label><input type="radio" name="q9" value="4"> 치매를 겪거나 알코올/약물중독에 빠진 가족원</label></li>
+                <li><label><input type="radio" name="q9" value="5"> 주거독립 후 타지에서 생활하는 부메랑 키즈</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(9, '4', '신체는 집에 함께 있으나 인지적, 정서적으로 정상 소통이 불가한 치매나 일중독 등은 물리적 존재-심리적 부재의 양상입니다.')">정답 확인</button>
+            <div id="res9" class="result-box"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="quiz-item">
+            <div class="question">10. 맥락적 ABC-X 모델에서 제시하는 맥락 구분 중 '가족 스스로 바꿀 수 없으며 문화, 역사, 경제, 발전 수준, 유전' 등이 포함되는 영역은 어디인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="1"> 내부 맥락(Internal Context)</label></li>
+                <li><label><input type="radio" name="q10" value="2"> 외부 맥락(External Context)</label></li>
+                <li><label><input type="radio" name="q10" value="3"> 철학적 맥락</label></li>
+                <li><label><input type="radio" name="q10" value="4"> 심리적 맥락</label></li>
+                <li><label><input type="radio" name="q10" value="5"> 구조적 맥락</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(10, '2', '가족 내부에서 조절이 불가하고 사회구조나 유전적 요인처럼 외부 환경으로 주어지는 조건을 외부 맥락이라고 합니다.')">정답 확인</button>
+            <div id="res10" class="result-box"></div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="quiz-item">
+            <div class="question">11. 맥락적 ABC-X 모델에서 '가족이 통제 또는 조절 가능한 영역'으로 가족의 경계와 역할구조, 철학, 신념, 심리적 인지 평가 등이 속하는 영역은 어디인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q11" value="1"> 외부 맥락</label></li>
+                <li><label><input type="radio" name="q11" value="2"> 역사적 맥락</label></li>
+                <li><label><input type="radio" name="q11" value="3"> 거시체계 맥락</label></li>
+                <li><label><input type="radio" name="q11" value="4"> 내부 맥락</label></li>
+                <li><label><input type="radio" name="q11" value="5"> 생물학적 맥락</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(11, '4', '가족 내 규칙, 구조, 가치관 등 가족 유기체가 주체적으로 제어할 수 있는 내적 조건은 내부 맥락입니다.')">정답 확인</button>
+            <div id="res11" class="result-box"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="quiz-item">
+            <div class="question">12. 위기 이후의 회복 및 적응 과정을 설명하기 위해 확장된 '이중 ABC-X 모델'의 핵심 구성 요소가 아닌 것은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q12" value="1"> 추가적으로 누적된 스트레스 사건(aA)</label></li>
+                <li><label><input type="radio" name="q12" value="2"> 위기 극복 과정에서 동원되는 기존 및 새로운 자원(bB)</label></li>
+                <li><label><input type="radio" name="q12" value="3"> 위기 상황 전반 및 자원에 대해 가족이 부여하는 새로운 지각/인식(cC)</label></li>
+                <li><label><input type="radio" name="q12" value="4"> 요구(demands)와 능력(capabilities)의 완전한 이분법적 수량화 비율</label></li>
+                <li><label><input type="radio" name="q12" value="5"> 위기 극복 노력을 통한 순적응 혹은 부적응 결과(xX)</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(12, '4', '요구와 능력의 균형 중심은 FAAR 모델의 특성이며, 이중 ABC-X 모델의 위기 이후 핵심 요소는 aA, bB, cC, xX 및 대처 과정입니다.')">정답 확인</button>
+            <div id="res12" class="result-box"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="quiz-item">
+            <div class="question">13. 이중 ABC-X 모델과 FAAR 모델을 비교 분석한 내용으로 잘못된 것을 고르시오.</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q13" value="1"> 이중 ABC-X 모델의 핵심 개념은 Aa, Bb, Cc, xX이다.</label></li>
+                <li><label><input type="radio" name="q13" value="2"> FAAR 모델은 가족체계의 균형 유지에 초점을 맞춘다.</label></li>
+                <li><label><input type="radio" name="q13" value="3"> 이중 ABC-X 모델의 결과물은 적응 또는 부적응으로 귀결된다.</label></li>
+                <li><label><input type="radio" name="q13" value="4"> FAAR 모델은 가족 위기 상황의 다세대 전수 과정을 추적하는 데 주로 활용된다.</label></li>
+                <li><label><input type="radio" name="q13" value="5"> FAAR 모델의 결과물은 '조정'과 '적응' 반응으로 분류된다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(13, '4', '가족 스트레스 비교 표에 근거할 때, FAAR 모델의 주 활용 목적은 가족위기 분석이 아닌 가족기능 평가입니다.')">정답 확인</button>
+            <div id="res13" class="result-box"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="quiz-item">
+            <div class="question">14. "변화와 위험한 상황 속에서 가족이 쉽게 붕괴하지 않고 원래대로 혹은 더 나은 상태로 회복할 수 있도록 돕는 가족의 특징이나 특성"을 의미하는 핵심 개념은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q14" value="1"> 일반적응증후군</label></li>
+                <li><label><input type="radio" name="q14" value="2"> 사회재적응 척도력</label></li>
+                <li><label><input type="radio" name="q14" value="3"> 가족 탄력성(Family Resilience)</label></li>
+                <li><label><input type="radio" name="q14" value="4"> 기능적 자원호혜성</label></li>
+                <li><label><input type="radio" name="q14" value="5"> 인지평가 수정력</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(14, '3', '위기와 스트레스 사건 속에서 가족을 보호하고 붕괴를 예방하는 회복 역량적 특징을 가족 탄력성이라고 합니다.')">정답 확인</button>
+            <div id="res14" class="result-box"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="quiz-item">
+            <div class="question">15. 교안에 제시된 '가족 탄력성의 9가지 구성요소'에 포함되지 않는 것은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q15" value="1"> 긍정적 관점 및 가족의 조화</label></li>
+                <li><label><input type="radio" name="q15" value="2"> 유연성 및 의사소통</label></li>
+                <li><label><input type="radio" name="q15" value="3"> 재정 운영 및 사회관계망</label></li>
+                <li><label><input type="radio" name="q15" value="4"> 부부 권력의 분리주의형 권력 장악</label></li>
+                <li><label><input type="radio" name="q15" value="5"> 일상활동과 의식, 가족시간 및 함께 하는 여가</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(15, '4', '분리주의형 권력 장악은 가족 탄력성 구성요소가 아닙니다. 탄력성 요소에는 긍정적 관점, 조화, 유연성, 소통, 재정, 시간, 여가, 일상/의식, 관계망 등이 있습니다.')">정답 확인</button>
+            <div id="res15" class="result-box"></div>
+        </div>
+
+
+        <h2>II. 단답형 문제 (16~20)</h2>
+
+        <!-- Q16 -->
+        <div class="quiz-item">
+            <div class="question">16. 셀리에(Selye)의 생리학적 스트레스 이론에서 스트레스 노출 기간이 약 1~3개월 이상 장기화되어 적적할 힘이 완전 고갈되고 급작스러운 질병이나 죽음에 이를 수 있는 최종 단계를 쓰시오.</div>
+            <input type="text" id="q16" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(16, ['소진기', '소진 기', '소진기단계'], '생리학적으로 스트레스 대항 자원이 완전히 바닥나 고갈되는 마지막 단계는 소진기입니다.')">정답 확인</button>
+            <div id="res16" class="result-box"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="quiz-item">
+            <div class="question">17. 스트레스 사건 자체의 객관적 영향력보다 개인이 그것에 부여하는 의미나 가치, 철학적 신념 평가가 스트레스 크기를 좌우한다고 할 때, 힐의 ABC-X 모델에서 이 평가 요소를 뜻하는 알파벳 기호를 쓰시오.</div>
+            <input type="text" id="q17" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(17, ['C'], '사건에 대해 가족이 내리는 평정 및 의미 부여인 인식을 상징하는 기호는 C입니다.')">정답 확인</button>
+            <div id="res17" class="result-box"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="quiz-item">
+            <div class="question">18. 힐의 ABC-X 모델의 결론이자 가족의 기존 평정 상태가 압도적으로 방해받고 급격한 변화로 체계가 무력화되어 나타나는 최종 위기 결과를 상징하는 알파벳 기호를 쓰시오.</div>
+            <input type="text" id="q18" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(18, ['X'], '스트레스 사건과 자원, 인식의 조합으로 초래되는 가족의 평정 붕괴 상태를 상징하는 기호는 X입니다.')">정답 확인</button>
+            <div id="res18" class="result-box"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="quiz-item">
+            <div class="question">19. 힐의 이중 ABC-X 모델에서 위기 발생 이후 수습 및 회복 과정에서 가족에게 생활고, 질병, 성적 저하 등 겹겹이 추가되어 쌓이는 스트레스원들을 지칭하는 용어를 쓰시오.</div>
+            <input type="text" id="q19" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(19, ['누적 스트레스원', '누적스트레스원', '누적 스트레스 사건'], '위기 발생 이후 2차적으로 엎친 데 덮치는 격으로 쌓이는 스트레스 요인들을 누적 스트레스원이라고 합니다.')">정답 확인</button>
+            <div id="res19" class="result-box"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="quiz-item">
+            <div class="question">20. 요구와 능력의 균형 유지를 중요시하는 가족 스트레스 모델로, 패터슨 등에 의해 제안된 '가족조정 및 적응반응 모델'의 영문 약어 명칭을 쓰시오.</div>
+            <input type="text" id="q20" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(20, ['FAAR', 'FAAR모델', 'FAAR 모델'], '가족체계의 균형에 초점을 맞춰 조정과 적응 결과를 도출해내는 모델의 약어는 FAAR입니다.')">정답 확인</button>
+            <div id="res20" class="result-box"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 객관식 정답 확인 함수
+    function checkRadio(qNum, correctVal, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const options = document.getElementsByName('q' + qNum);
+        let selected = "";
+        
+        for(let i=0; i<options.length; i++) {
+            if(options[i].checked) {
+                selected = options[i].value;
+                break;
+            }
+        }
+        
+        if(!selected) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.innerHTML = "문제를 선택해 주세요.";
+            return;
+        }
+        
+        resDiv.style.display = "block";
+        if(selected === correctVal) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 고민해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+
+    // 단답형 정답 확인 함수
+    function checkText(qNum, correctArray, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const inputVal = document.getElementById('q' + qNum).value.trim();
+        
+        if(!inputVal) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "정답을 입력해 주세요.";
+            return;
+        }
+        
+        let isCorrect = correctArray.some(ans => inputVal.toLowerCase() === ans.toLowerCase());
+        
+        resDiv.style.display = "block";
+        if(isCorrect) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 확인해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+</script>
+
+</body>
+</html>
+
