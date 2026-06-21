@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>15주차 퀴즈 - 이혼, 재혼, 한부모가족</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* 단답형 입력창 */
+        .short-answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        /* 정답 버튼 및 해설 */
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #475569;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 중앙 네비게이션 바 -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html">13주차</a>
+        <a href="14.html">14주차</a>
+        <a href="15.html" class="active">15주차</a>
+        <a href="서술형.html">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>15주차 학습 진단 퀴즈: 이혼, 재혼, 한부모가족</h1>
+
+    <form id="quizForm" onsubmit="return false;">
+        
+        <h2>I. 5지선다형 문제 (1~15)</h2>
+
+        <!-- Q1 -->
+        <div class="quiz-item">
+            <div class="question">1. 대한민국 가사소송법과 민법상 이혼 절차에 대한 설명으로 옳은 것을 고르시오.</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="1"> 통계청(2021) 기준 재판상 이혼이 협의이혼보다 비율이 훨씬 높다.</label></li>
+                <li><label><input type="radio" name="q1" value="2"> 재판상 이혼 시 부부 합의 하에 행정관청에 바로 신고하면 절차가 완전히 종결된다.</label></li>
+                <li><label><input type="radio" name="q1" value="3"> 우리나라는 소송을 제기하기 전에 상호 간 조정 절차를 반드시 먼저 거치도록 하는 '조정전치주의'를 채택하고 있다.</label></li>
+                <li><label><input type="radio" name="q1" value="4"> 협의이혼 시 자녀의 친권과 양육권 문제는 법원 판결로만 결정되며 협의 사항에서 배제된다.</label></li>
+                <li><label><input type="radio" name="q1" value="5"> 조정이혼과 소송이혼은 협의이혼의 하위 행정 절차에 해당한다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(1, '3', '우리나라는 재판상 이혼 소송을 제기하기 전에 상호 조정 절차를 의무적으로 거치게 하는 조정전치주의를 채택하고 있습니다.')">정답 확인</button>
+            <div id="res1" class="result-box"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-item">
+            <div class="question">2. 이혼을 바라보는 이론적 관점 중 '결혼생활 유지를 위해 투입되는 비용과 그를 통해 얻는 보상 간의 격차 및 불균형'으로 이혼을 설명하는 관점은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="1"> 구조기능주의적 관점</label></li>
+                <li><label><input type="radio" name="q2" value="2"> 사회교환론적 관점</label></li>
+                <li><label><input type="radio" name="q2" value="3"> 생애과정 관점</label></li>
+                <li><label><input type="radio" name="q2" value="4"> 유기체론적 관점</label></li>
+                <li><label><input type="radio" name="q2" value="5"> 상징적 상호작용 관점</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(2, '2', '결혼생활 내에서의 비용과 보상 간의 격차 및 대안적 보상 비교를 중심으로 이혼을 규명하는 시각은 사회교환론적 관점입니다.')">정답 확인</button>
+            <div id="res2" class="result-box"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-item">
+            <div class="question">3. 한국 사회의 이혼율 추이 그래프에 대한 설명으로 가장 적절한 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="1"> 1970년대부터 2021년까지 조이혼율은 단 한 번의 감소 없이 지속적으로 폭증했다.</label></li>
+                <li><label><input type="radio" name="q3" value="2"> 통계 역사상 조이혼율과 이혼 건수가 가장 정점을 찍었던 해는 1997년(외환위기)이다.</label></li>
+                <li><label><input type="radio" name="q3" value="3"> 2003년 조이혼율 3.4건 기록 이후, 이혼숙려제도 도입 등의 정책 영향과 혼인건수 감소 등으로 인해 전반적인 감소 추세가 유지되고 있다.</label></li>
+                <li><label><input type="radio" name="q3" value="4"> 2021년의 총 이혼 건수는 1970년대 초반보다 더 낮아졌다.</label></li>
+                <li><label><input type="radio" name="q3" value="5"> 정책적 개입(이혼숙려제 등)은 한국 사회의 이혼율 변화에 아무런 영향을 주지 못했다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(3, '3', '교안 그래프와 설명에 따르면 한국의 이혼율은 2003년 정점(16.7만 건, 조이혼율 3.4)을 찍은 후 이혼숙려제도 도입 등의 요인으로 인해 전반적으로 감소 추세를 보이고 있습니다.')">정답 확인</button>
+            <div id="res3" class="result-box"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-item">
+            <div class="question">4. 최근 통계청 자료에 따른 한국 사회의 평균 이혼연령 변화 특징으로 옳은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="1"> 만혼화 경향에도 불구하고 평균 이혼연령은 남녀 모두 점차 낮아지고 있다.</label></li>
+                <li><label><input type="radio" name="q4" value="2"> 2011년에 비해 2021년의 평균 이혼연령은 남성과 여성 모두 대폭 상승하였다.</label></li>
+                <li><label><input type="radio" name="q4" value="3"> 남성과 여성의 평균 이혼연령 차이는 10년 전에 비해 훨씬 더 크게 벌어졌다.</label></li>
+                <li><label><input type="radio" name="q4" value="4"> 2021년 기준 여성의 평균 이혼연령은 이미 50세를 넘어섰다.</label></li>
+                <li><label><input type="radio" name="q4" value="5"> 중장년층 및 고령층의 이혼 감소가 평균 이혼연령을 뒤흔드는 주된 요인이다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(4, '2', '평균이혼연령 추이 표를 보면 남성은 2011년 45.4세에서 2021년 50.1세로, 여성은 41.5세에서 46.8세로 남녀 모두 지난 10년간 이혼 연령이 뚜렷하게 상승했습니다.')">정답 확인</button>
+            <div id="res4" class="result-box"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-item">
+            <div class="question">5. 연령대별 조이혼율 통계(2011년 대비 2021년 비교)에서 '이례적으로 조이혼율이 오히려 증가한 집단'은 다음 중 어디인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="1"> 20대 후반(25~29세) 남성 및 여성</label></li>
+                <li><label><input type="radio" name="q5" value="2"> 30대 초반(30~34세) 남성</label></li>
+                <li><label><input type="radio" name="q5" value="3"> 40대 전반(40~44세) 여성</label></li>
+                <li><label><input type="radio" name="q5" value="4"> 50대 이상 장년 및 노년층 집단</label></li>
+                <li><label><input type="radio" name="q5" value="5"> 모든 연령대에서 고르게 이혼율이 감소했다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(5, '4', '40대 이하 연령대에서는 2011년에 비해 2021년의 조이혼율이 낮아졌으나, 연장된 노년기와 가치관 변화 등으로 인해 50대 이상 연령층에서는 오히려 높아지는 경향을 보였습니다.')">정답 확인</button>
+            <div id="res5" class="result-box"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="quiz-item">
+            <div class="question">6. 혼인지속기간별 이혼 구성비 추이를 분석했을 때, 최근 한국 사회에서 나타나는 두드러진 변화 패턴은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="1"> 신혼기 가구에 속하는 '0~4년 이하'의 이혼 비중이 폭발적으로 급증하고 있다.</label></li>
+                <li><label><input type="radio" name="q6" value="2"> 5~9년차 부부의 이혼 구성비가 전체 이혼의 80% 이상을 차지한다.</label></li>
+                <li><label><input type="radio" name="q6" value="3"> 단기 혼인지속기간(9년 이하)의 이혼 비중은 줄어드는 반면, '20년 이상' 또는 '30년 이상'의 황혼 이혼 비중이 상대적으로 크게 증가하고 있다.</label></li>
+                <li><label><input type="radio" name="q6" value="4"> 혼인지속기간이 길어질수록 이혼을 선택하는 비중은 전 세계적으로 제로(0)에 수렴한다.</label></li>
+                <li><label><input type="radio" name="q6" value="5"> 10~14년차 부부의 이혼 비중이 가장 급격한 하락세를 나타내고 있다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(6, '3', '교안 그래프에 따르면 0~4년 이하 등의 초기 이혼 비중은 과거에 비해 줄어든 반면, 20년 이상 및 30년 이상의 혼인지속기간 후 이혼하는 비중은 눈에 띄게 증가했습니다.')">정답 확인</button>
+            <div id="res6" class="result-box"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="quiz-item">
+            <div class="question">7. Goetting(1982)이 제시한 관점으로, 이혼을 법적인 관계 해소라는 단일 '사건'으로만 보지 않고 법적 종결 이전부터 이후까지 정서적, 경제적, 부모역할, 지역사회, 심리적 측면에 걸쳐 연속적으로 일어나는 변화로 이해하려는 관점은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="1"> 구조기능적 단선 관점</label></li>
+                <li><label><input type="radio" name="q7" value="2"> 다측면적인 '과정(Process)'으로서의 관점</label></li>
+                <li><label><input type="radio" name="q7" value="3"> 이타주의 교환 모델 관점</label></li>
+                <li><label><input type="radio" name="q7" value="4"> 위계적 자원소진 관점</label></li>
+                <li><label><input type="radio" name="q7" value="5"> 사회재적응 평정 관점</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(7, '2', '이혼 후 적응에 있어 이혼을 단순 법적 해소가 아닌 복합적이고 다차원적인 연속적 과정으로 바라보는 시각이 강조되고 있습니다.')">정답 확인</button>
+            <div id="res7" class="result-box"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="quiz-item">
+            <div class="question">8. 최근 한국 사회의 재혼 현황 통계(2001년 대비 2021년 비교)에 대한 설명으로 옳은 것을 고르시오.</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="1"> 전체 혼인건수에서 재혼이 차지하는 비율은 지속적으로 감소하고 있다.</label></li>
+                <li><label><input type="radio" name="q8" value="2"> 만혼화 경향과 맞물려 평균 재혼연령은 점차 증가하는 추세이다.</label></li>
+                <li><label><input type="radio" name="q8" value="3"> 2021년 기준 남성의 평균 재혼연령은 여성보다 10세 이상 높다.</label></li>
+                <li><label><input type="radio" name="q8" value="4"> 재혼 부부의 남녀 간 평균 재혼연령 차이는 과거보다 훨씬 더 넓어졌다.</label></li>
+                <li><label><input type="radio" name="q8" value="5"> 여성의 평균 재혼연령은 지난 20년간 30대 중반에 고착되어 변화가 없다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(8, '2', '평균 재혼연령은 만혼화의 영향으로 남성(42.1세&rarr;50.7세), 여성(37.6세&rarr;46.5세) 모두 증가 추세에 있습니다.')">정답 확인</button>
+            <div id="res8" class="result-box"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="quiz-item">
+            <div class="question">9. 재혼가족의 긍정적인 보상적 측면(Folk 등, 1992)에 대한 설명으로 교안에 언급되지 않은 것은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="1"> 혼자서 견뎌야 했던 어려움을 함께 헤쳐나갈 동반자를 다시 얻는다.</label></li>
+                <li><label><input type="radio" name="q9" value="2"> 경제활동이나 양육 책임 등의 과도한 부담이나 짐을 함께 나눌 수 있다.</label></li>
+                <li><label><input type="radio" name="q9" value="3"> 이혼으로 인한 상실감이나 외로움을 극복할 수 있는 대안이 된다.</label></li>
+                <li><label><input type="radio" name="q9" value="4"> 특히 여성의 경우 경제적 상태나 생활수준이 향상되는 긍정적 효과가 있다.</label></li>
+                <li><label><input type="radio" name="q9" value="5"> 전혼 자녀들의 친자녀 간 상속 서열 분쟁을 원천적으로 차단해 준다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(9, '5', '동반자 형성, 책임 분담, 외로움 극복, 여성의 경제적 상태 향상 등은 보상으로 제시되어 있으나, 상속 분쟁 차단 관련 내용은 포함되어 있지 않습니다.')">정답 확인</button>
+            <div id="res9" class="result-box"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="quiz-item">
+            <div class="question">10. 초혼가족과 구별되는 재혼가족만의 독특한 적응의 어려움으로, 가족관계에 적합한 행동 양식이나 역할 분담, 문화적 사회적 각본 등이 뚜렷하게 존재하지 않아 발생하는 문제를 무엇이라 하는가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="1"> 구조기능적 역할 과부하</label></li>
+                <li><label><input type="radio" name="q10" value="2"> 이중 교환 보상 격차</label></li>
+                <li><label><input type="radio" name="q10" value="3"> 사회적 규범의 부재 및 가족경계의 모호성</label></li>
+                <li><label><input type="radio" name="q10" value="4"> 위계적 보상 구조의 붕괴</label></li>
+                <li><label><input type="radio" name="q10" value="5"> 묵시적 정책의 개입 오류</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(10, '3', '재혼가족은 초혼가족과 달리 문화적 각본이나 적합한 행동 행동 규범이 정립되어 있지 않아 규범의 부재 및 명확한 경계 확립의 어려움을 경험합니다.')">정답 확인</button>
+            <div id="res10" class="result-box"></div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="quiz-item">
+            <div class="question">11. 재혼가족의 적응 발달과정 7단계 중 '비현실적인 기대감으로 시작하여 실제 공동 생활을 통해 현실을 차분하게 인식해 나가는 초기 3단계'에 포함되지 않는 단계는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q11" value="1"> 환상기</label></li>
+                <li><label><input type="radio" name="q11" value="2"> 몰입기</label></li>
+                <li><label><input type="radio" name="q11" value="3"> 인식기</label></li>
+                <li><label><input type="radio" name="q11" value="4"> 변동기</label></li>
+                <li><label><input type="radio" name="q11" value="5"> 1, 2, 3번 모두 초기 단계에 속한다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(11, '4', '재혼가족 발달 7단계 중 초기 단계는 환상기, 몰입기, 인식기입니다. 변동기와 행동기는 중기 단계에 해당합니다.')">정답 확인</button>
+            <div id="res11" class="result-box"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="quiz-item">
+            <div class="question">12. 재혼가족의 부부관계에 가장 부정적인 영향을 미치는 주요 유발 요인이자, 친부모와 계부모 사이에서 자녀들이 심리적 긴장과 위치 혼란을 겪게 되는 갈등 현상을 무엇이라 부르는가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q12" value="1"> 생계부양자 갈등</label></li>
+                <li><label><input type="radio" name="q12" value="2"> 충성심 갈등(loyalty conflict)</label></li>
+                <li><label><input type="radio" name="q12" value="3"> 자아분화 역동 갈등</label></li>
+                <li><label><input type="radio" name="q12" value="4"> 호주제 폐지 갈등</label></li>
+                <li><label><input type="radio" name="q12" value="5"> 기능적 결속 갈등</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(12, '2', '부모의 이혼·재혼 과정에서 자녀가 친부모와 계부모 사이에서 두 명의 엄마/아빠를 가졌다는 인식 등으로 겪는 심리적 마찰을 자녀들의 충성심 갈등이라고 합니다.')">정답 확인</button>
+            <div id="res12" class="result-box"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="quiz-item">
+            <div class="question">13. 대한민국의 가족법 및 호주제 폐지(2005년)와 관련된 설명 중 재혼가족의 자녀 성씨 제도 변화에 대한 내용으로 옳은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q13" value="1"> 개정 전 민법과 개정 후 민법 모두 자녀는 무조건 친아버지가 지정한 성만 따라야 한다.</label></li>
+                <li><label><input type="radio" name="q13" value="2"> 호주제가 유지되면서 재혼 시 자녀의 성씨를 바꾸는 법적 경로가 완전히 차단되었다.</label></li>
+                <li><label><input type="radio" name="q13" value="3"> 호주제 폐지 이후 민법 개정을 통해 기본적으로 부의 성을 따르되, 부모가 혼인신고 시 모의 성과 본을 따르기로 협의한 경우에는 모의 성과 본을 따를 수 있도록 제도가 개선되었다.</label></li>
+                <li><label><input type="radio" name="q13" value="4"> 현재 대한민국 법정재산제 하에서는 계자녀의 성씨를 변경하면 전혼 재산분할 권리가 소멸된다.</label></li>
+                <li><label><input type="radio" name="q13" value="5"> 어머니의 성을 따르는 것은 불법이며 오직 법원의 직권 재판 판결로만 가능하다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(13, '3', '혈통을 중시하던 호주제가 2005년 폐지되면서, 혼인신고 시 부부 협의가 있을 경우 자녀가 어머니의 성과 본을 따를 수 있도록 법이 개정되었습니다.')">정답 확인</button>
+            <div id="res13" class="result-box"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="quiz-item">
+            <div class="question">14. 한국 통계청 인구총조사 등의 자료를 바탕으로 본 '전체 가구 수 대비 한부모가구가 차지하는 비율'의 최근 전반적인 추이는 어떠한가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q14" value="1"> 2017년 약 7.6%를 기록한 이후 점차 소폭 하락하는 양상을 보이며 2021년에는 6.9%를 기록했다.</label></li>
+                <li><label><input type="radio" name="q14" value="2"> 매년 5% 이상씩 급격하게 증가하여 현재 전체 가구의 절반에 육박한다.</label></li>
+                <li><label><input type="radio" name="q14" value="3"> 총 가구 수 증가율보다 훨씬 낮아 가구 비중이 1% 미만으로 소멸했다.</label></li>
+                <li><label><input type="radio" name="q14" value="4"> 청소년 한부모가구의 급증으로 인해 전체 비율이 30% 선을 돌파했다.</label></li>
+                <li><label><input type="radio" name="q14" value="5"> 등락을 반복하며 전형적인 M자형 곡선 흐름 패턴을 유지하고 있다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(14, '1', '한부모가구 비율 표에 근거할 때, 전체 가구 중 한부모가구가 차지하는 비중은 2017년 7.6%에서 해마다 조금씩 감소하여 2021년에는 6.9%를 나타냈습니다.')">정답 확인</button>
+            <div id="res14" class="result-box"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="quiz-item">
+            <div class="question">15. 여성가족부의 '2021 한부모가족 실태조사' 결과에 나타난 한국 한부모가족의 자산 및 소득 실태에 대한 설명으로 옳은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q15" value="1"> 전체 가구 소득 평균보다 한부모가족의 평균 소득이 훨씬 더 높다.</label></li>
+                <li><label><input type="radio" name="q15" value="2"> 2018년에 비해 2021년에 소득과 순자산이 소폭 증가하였으나, 여전히 전체 가구 소득과 비교하면 지속적으로 낮은 수준을 보이고 있다.</label></li>
+                <li><label><input type="radio" name="q15" value="3"> 자녀양육비 전액 국가 대납 제도로 인해 자산 형성 수준이 재혼가족을 추월했다.</label></li>
+                <li><label><input type="radio" name="q15" value="4"> 소득인정액이 중위소득 100%를 초과하여 복지시설 입소가 전면 금지되었다.</label></li>
+                <li><label><input type="radio" name="q15" value="5"> 정부 양육지원금 차단 정책으로 인해 순자산 규모가 파산 수준으로 감소했다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(15, '2', '한부모가족의 소득과 자산 지표는 과거 조사에 비해 다소 개선되었으나, 일반 전체 가구 평균 소득수준에 비하면 여전히 지속적으로 낮은 격차를 보이고 있습니다.')">정답 확인</button>
+            <div id="res15" class="result-box"></div>
+        </div>
+
+
+        <h2>II. 단답형 문제 (16~20)</h2>
+
+        <!-- Q16 -->
+        <div class="quiz-item">
+            <div class="question">16. 부모(부 또는 모)의 연령이 만 24세 이하인 한부모가족을 특별히 구분하여 부르는 법적 명칭을 쓰시오.</div>
+            <input type="text" id="q16" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(16, ['청소년 한부모가족', '청소년 한부모', '청소년한부모'], '한부모가족의 범위 중 부 또는 모의 나이가 24세 이하인 경우를 청소년 한부모라고 명시하고 있습니다.')">정답 확인</button>
+            <div id="res16" class="result-box"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="quiz-item">
+            <div class="question">17. 저소득 한부모가족 및 조손가족의 경우, 아동양육비를 지원받기 위한 소득 기준은 '기준 중위소득의 몇 % 이하'여야 하는지 그 수치를 쓰시오.</div>
+            <input type="text" id="q17" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(17, ['52%', '52', '52퍼센트'], '저소득 한부모가족 및 조손가족의 아동양육비 지원 가구 기준 소득인정액은 기준 중위소득의 52% 이하입니다.')">정답 확인</button>
+            <div id="res17" class="result-box"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="quiz-item">
+            <div class="question">18. 청소년 한부모가족(24세 이하)이 아동양육비 정부 지원금을 받기 위한 소득 요건은 '기준 중위소득의 몇 % 이하'여야 하는지 그 수치를 쓰시오.</div>
+            <input type="text" id="q18" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(18, ['60%', '60', '60퍼센트'], '교안에 명시된 청소년 한부모가족의 아동양육비 지원 소득 기준은 기준 중위소득의 60% 이하입니다.')">정답 확인</button>
+            <div id="res18" class="result-box"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="quiz-item">
+            <div class="question">19. 저소득 무주택 한부모가족을 대상으로 주거와 생계를 일정 기간 지원해 주는 시설로, 입소 대상자에 따라 모자가족, 부자가족, 미혼모자가족 시설 등으로 구분되는 사회복지시설의 총칭을 쓰시오.</div>
+            <input type="text" id="q19" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(19, ['한부모가족 복지시설', '한부모가족복지시설', '한부모 가족 복지시설'], '일정 기간 저소득 무주택 한부모가구에게 주거 편의 등을 제공하는 시설 명칭은 한부모가족 복지시설입니다.')">정답 확인</button>
+            <div id="res19" class="result-box"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="quiz-item">
+            <div class="question">20. 비양육 부모로부터 자녀 양육비를 안정적으로 확보할 수 있도록 돕고, 불이행 시 과태료, 이행명령, 담보제공명령 등의 조치를 처할 수 있도록 지원하는 한부모 지원 사업의 명칭은 '자녀OOOO 확보 법률 지원'이다. 빈칸에 들어갈 올바른 단어를 쓰시오.</div>
+            <input type="text" id="q20" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(20, ['양육비', '자녀양육비'], '불이행 부모를 상대로 권리를 청구하고 소송을 대행해 주는 서비스는 자녀양육비 청구 및 확보 지원입니다.')">정답 확인</button>
+            <div id="res20" class="result-box"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 객관식 정답 확인 함수
+    function checkRadio(qNum, correctVal, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const options = document.getElementsByName('q' + qNum);
+        let selected = "";
+        
+        for(let i=0; i<options.length; i++) {
+            if(options[i].checked) {
+                selected = options[i].value;
+                break;
+            }
+        }
+        
+        if(!selected) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.innerHTML = "문제를 선택해 주세요.";
+            return;
+        }
+        
+        resDiv.style.display = "block";
+        if(selected === correctVal) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 고민해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+
+    // 단답형 정답 확인 함수
+    function checkText(qNum, correctArray, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const inputVal = document.getElementById('q' + qNum).value.trim();
+        
+        if(!inputVal) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "정답을 입력해 주세요.";
+            return;
+        }
+        
+        let isCorrect = correctArray.some(ans => inputVal.toLowerCase() === ans.toLowerCase());
+        
+        resDiv.style.display = "block";
+        if(isCorrect) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 확인해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+</script>
+
+</body>
+</html>
+
