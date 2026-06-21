@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>11주차 퀴즈 - 성인기 부모자녀관계 & 가족의사소통</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* 단답형 입력창 */
+        .short-answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        /* 정답 버튼 및 해설 */
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #475569;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 중앙 네비게이션 바 -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html" class="active">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html">13주차</a>
+        <a href="14.html">14주차</a>
+        <a href="15.html">15주차</a>
+        <a href="서술형.html">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>11주차 학습 진단 퀴즈: 성인기 부모자녀관계 & 가족의사소통</h1>
+
+    <form id="quizForm" onsubmit="return false;">
+        
+        <h2>I. 5지선다형 문제 (1~15)</h2>
+
+        <!-- Q1 -->
+        <div class="quiz-item">
+            <div class="question">1. 벵슨과 동료들(Bengtson & Roberts, 1991)이 제시한 '세대 간 결속'의 6가지 차원 중, 부모 자녀 간 주고받는 실질적인 지원(금전, 물품, 시간, 노동 등)을 의미하는 차원은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="1"> 연합적 결속</label></li>
+                <li><label><input type="radio" name="q1" value="2"> 애정적 결속</label></li>
+                <li><label><input type="radio" name="q1" value="3"> 합의적 결속</label></li>
+                <li><label><input type="radio" name="q1" value="4"> 기능적 결속</label></li>
+                <li><label><input type="radio" name="q1" value="5"> 규범적 결속</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(1, '4', '부모자녀 간 서로 자원이나 도움을 주고받는 행위는 기능적 결속에 해당합니다.')">정답 확인</button>
+            <div id="res1" class="result-box"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-item">
+            <div class="question">2. 실버스타인과 벵슨(Silverstein & Bengtson, 1997)의 세대관계 유형 중, '부모와 지리적으로 가까이 거주하면서 자주 연락하고 정서적 친밀감과 가치관 유사성도 높지만 실질적인 도움(자원 교환)은 주고받지 않는 유형'은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="1"> 기밀한(tight-knit) 관계</label></li>
+                <li><label><input type="radio" name="q2" value="2"> 원만한(sociable) 관계</label></li>
+                <li><label><input type="radio" name="q2" value="3"> 의무적(obligatory) 관계</label></li>
+                <li><label><input type="radio" name="q2" value="4"> 친밀하지만 거리가 있는(intimate but distant) 관계</label></li>
+                <li><label><input type="radio" name="q2" value="5"> 소원한(detached) 관계</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(2, '2', '원만한 관계는 자원 교환에 해당하는 기능적 결속을 제외한 모든 차원의 결속(근접성, 연락, 친밀감, 가치관 유사성 등)이 강한 유형입니다.')">정답 확인</button>
+            <div id="res2" class="result-box"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-item">
+            <div class="question">3. 이재림 등(2020)이 국내 청년을 대상으로 도출한 세대유형 중, '겉으로 드러나는 구조적, 연합적, 기능적 결속 수준은 높지만 애정적 친밀감이나 가치관 유사성 등 내면적 결속은 낮은 유형'은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="1"> 전반적 결속형</label></li>
+                <li><label><input type="radio" name="q3" value="2"> 표면적 결속형</label></li>
+                <li><label><input type="radio" name="q3" value="3"> 독립적 친밀형</label></li>
+                <li><label><input type="radio" name="q3" value="4"> 아버지 소원형</label></li>
+                <li><label><input type="radio" name="q3" value="5"> 방임적 고립형</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(3, '2', '표면적 결속형은 겉으로 드러나는 연락, 동거, 지원 등은 활발하지만 애정적, 합의적 결속이 낮은 유형을 의미합니다.')">정답 확인</button>
+            <div id="res3" class="result-box"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-item">
+            <div class="question">4. 세대 간 양가성(intergenerational ambivalence)에 대한 설명 중 사회적 양가성의 사례로 가장 적절한 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="1"> 자녀가 마음속으로 부모를 깊이 사랑하면서도 동시에 원망하는 감정을 느끼는 상태</label></li>
+                <li><label><input type="radio" name="q4" value="2"> '성인 자녀는 부모로부터 독립해야 한다'는 규범과 '부모에게 지원을 받아도 괜찮다'는 사회적 규범이 모순을 이루는 상태</label></li>
+                <li><label><input type="radio" name="q4" value="3"> 부모가 자녀의 학비를 대주면서 즉각적으로 가사노동 분담 보상을 요구하는 상태</label></li>
+                <li><label><input type="radio" name="q4" value="4"> 이타적인 부모가 대가를 전혀 바라지 않고 자녀에게 자원을 이전하는 상태</label></li>
+                <li><label><input type="radio" name="q4" value="5"> 노부모 부양 시 자녀와 이웃 중 누구에게 먼저 도움을 청할지 서열을 매기는 상태</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(4, '2', '사회적 양가성은 주관적 감정이 아니라 사회적 지위나 역할 규범 자체에 모순이 존재하는 상태를 뜻합니다. 독립해야 한다는 규범과 지원받아도 된다는 규범의 상충이 대표적입니다.')">정답 확인</button>
+            <div id="res4" class="result-box"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-item">
+            <div class="question">5. 아넷(Arnett)이 제안한 '성인진입기(emerging adulthood)'의 특징으로 적절하지 않은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="1"> 활발한 정체성 탐색이 일어난다.</label></li>
+                <li><label><input type="radio" name="q5" value="2"> 직장, 학업 등에서 다양한 불안정성을 경험한다.</label></li>
+                <li><label><input type="radio" name="q5" value="3"> 자기 중심성이 높게 나타난다.</label></li>
+                <li><label><input type="radio" name="q5" value="4"> 청소년도 아니고 성인도 아닌 '낀 시기'라는 느낌을 갖는다.</label></li>
+                <li><label><input type="radio" name="q5" value="5"> 미래에 대한 부정적 시각과 패배주의적 경향이 지배적이다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(5, '5', '성인진입기의 5가지 특징은 정체성 탐색, 불안정성, 자기 중심성, 낀시기 느낌, 그리고 가능성과 낙관주의입니다.')">정답 확인</button>
+            <div id="res5" class="result-box"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="quiz-item">
+            <div class="question">6. 자녀 곁을 떠나지 않고 주변을 맴돌다가 장애물이나 의사결정 순간에 즉각적으로 개입하여 과도하게 통제·보호하며, 자녀의 유능성과 관계성에 부정적인 영향을 미치는 부모역할 양식을 가리키는 신조어는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="1"> 캥거루 부모</label></li>
+                <li><label><input type="radio" name="q6" value="2"> 부메랑 부모</label></li>
+                <li><label><input type="radio" name="q6" value="3"> 헬리콥터 부모역할(Helicopter Parenting)</label></li>
+                <li><label><input type="radio" name="q6" value="4"> 아코디언 부모</label></li>
+                <li><label><input type="radio" name="q6" value="5"> 프렌디형 부모</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(6, '3', '자녀의 자율성을 해치고 지나치게 개입, 통제, 보호하는 양육 태도를 헬리콥터 부모역할이라고 부릅니다.')">정답 확인</button>
+            <div id="res6" class="result-box"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="quiz-item">
+            <div class="question">7. 메러비언(Mehrabian)의 법칙에 의하면, 상대방으로부터 받는 이미지(의사소통 효과)를 결정할 때 비언어적 요소(청각적 요소 및 시각적 요소)가 차지하는 총 비율은 몇 %인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="1"> 7%</label></li>
+                <li><label><input type="radio" name="q7" value="2"> 38%</label></li>
+                <li><label><input type="radio" name="q7" value="3"> 55%</label></li>
+                <li><label><input type="radio" name="q7" value="4"> 65%</label></li>
+                <li><label><input type="radio" name="q7" value="5"> 93%</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(7, '5', '메러비언 법칙에서 말의 내용(언어)은 7%, 청각적 요소는 38%, 시각적 요소는 55%를 차지하여 비언어적 요소의 합은 총 93%에 달합니다.')">정답 확인</button>
+            <div id="res7" class="result-box"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="quiz-item">
+            <div class="question">8. 의사소통 자체에 대한 의사소통을 뜻하며, 가족 내에서 갈등 해결 방식이나 애정 표현 방식 등의 가족 규칙을 만드는 데 관여하는 상위 차원의 의사소통 개념은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="1"> 이중구속 메시지</label></li>
+                <li><label><input type="radio" name="q8" value="2"> 구두점 찍기</label></li>
+                <li><label><input type="radio" name="q8" value="3"> 메타 의사소통</label></li>
+                <li><label><input type="radio" name="q8" value="4"> 주도적 경청</label></li>
+                <li><label><input type="radio" name="q8" value="5"> 나-전달법</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(8, '3', '의사소통 자체에 대해 한층 높은 차원에서 소통하는 것을 메타 의사소통이라고 합니다.')">정답 확인</button>
+            <div id="res8" class="result-box"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="quiz-item">
+            <div class="question">9. 존 가트먼(John Gottman) 교수의 연구 결과, 부부를 이혼에 이르게 만드는 가장 핵심적인 요인은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="1"> 선천적인 성격 차이</label></li>
+                <li><label><input type="radio" name="q9" value="2"> 의사소통 방식의 문제</label></li>
+                <li><label><input type="radio" name="q9" value="3"> 부부간의 학력 및 자원 차이</label></li>
+                <li><label><input type="radio" name="q9" value="4"> 종교적 신앙의 불일치</label></li>
+                <li><label><input type="radio" name="q9" value="5"> 자녀 출가로 인한 빈둥지 증후군</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(9, '2', '가트먼 교수의 실험에 따르면 부부를 이혼에 이르게 하는 결정적인 요인은 성격 차이가 아니라 의미와 감정을 공유하는 의사소통 방식의 문제입니다.')">정답 확인</button>
+            <div id="res9" class="result-box"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="quiz-item">
+            <div class="question">10. 가트먼이 제시한 '묵시록의 네 기사' 중 "상대방이 공격한다고 생각하는 것으로부터 자신을 보호하기 위해 '내가 언제 그랬냐?', '너는 그럼 잘했냐?'라는 식으로 반박하는 역기능적 의사소통"은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="1"> 비난(Criticism)</label></li>
+                <li><label><input type="radio" name="q10" value="2"> 방어(Defensiveness)</label></li>
+                <li><label><input type="radio" name="q10" value="3"> 경멸(Contempt)</label></li>
+                <li><label><input type="radio" name="q10" value="4"> 담쌓기(Stonewalling)</label></li>
+                <li><label><input type="radio" name="q10" value="5"> 평가절하(Invalidation)</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(10, '2', '상대의 문제 제기에 책임을 회피하고 자신을 방어하며 맞받아치는 행동은 방어에 해당합니다.')">정답 확인</button>
+            <div id="res10" class="result-box"></div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="quiz-item">
+            <div class="question">11. 가트먼이 제시한 의사소통 유형 중 "상대방보다 자신이 우위에 있음을 말이나 비언어적 행동으로 표현하며, 상대를 비웃거나 무시하는 행동"으로 결혼생활에 가장 파괴적인 영향을 미치는 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q11" value="1"> 비난</label></li>
+                <li><label><input type="radio" name="q11" value="2"> 방어</label></li>
+                <li><label><input type="radio" name="q11" value="3"> 경멸</label></li>
+                <li><label><input type="radio" name="q11" value="4"> 담쌓기</label></li>
+                <li><label><input type="radio" name="q11" value="5"> 확대</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(11, '3', '자신이 우위에 있다고 생각하며 상대를 멸시하는 태도는 경멸이며, 관계를 끊어지게 만드는 가장 치명적인 독소입니다.')">정답 확인</button>
+            <div id="res11" class="result-box"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="quiz-item">
+            <div class="question">12. 마크먼 등(Markman et al., 1987)이 제시한 파괴적인 의사소통 유형 중, "대화 도중에 자리를 나가버리거나 침묵하거나, 상황을 모면하기 위해 마음에도 없이 무조건 동의해버리는 행동"을 가리키는 용어는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q12" value="1"> 확대(Escalation)</label></li>
+                <li><label><input type="radio" name="q12" value="2"> 평가절하(Invalidation)</label></li>
+                <li><label><input type="radio" name="q12" value="3"> 부정적 해석(Negative Interpretation)</label></li>
+                <li><label><input type="radio" name="q12" value="4"> 철회(Withdrawal)</label></li>
+                <li><label><input type="radio" name="q12" value="5"> 회피(Avoidance)</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(12, '4', '논쟁 도중 이탈, 침묵, 영혼 없는 동의 등으로 대화에 참여하지 않는 파괴적 소통 행동은 철회입니다.')">정답 확인</button>
+            <div id="res12" class="result-box"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="quiz-item">
+            <div class="question">13. 사티어(Satir)의 의사소통 유형 중, 자아존중감이 낮아 타인의 비유를 맞추려고 하며, 자신의 감정을 숨긴 채 타인의 비난이나 요구를 무조건 수용하려는 역기능적 의사소통 유형은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q13" value="1"> 비난형(blamer)</label></li>
+                <li><label><input type="radio" name="q13" value="2"> 초이성형(super-reasonable)</label></li>
+                <li><label><input type="radio" name="q13" value="3"> 회유/아첨형(placater)</label></li>
+                <li><label><input type="radio" name="q13" value="4"> 산만/혼란형(irrelevant)</label></li>
+                <li><label><input type="radio" name="q13" value="5"> 일치형(congruent)</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(13, '3', '자신을 무시하고 타인과 상황만을 존중하며 상대의 기분을 맞추려고 애쓰는 유형은 회유/아첨형입니다.')">정답 확인</button>
+            <div id="res13" class="result-box"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="quiz-item">
+            <div class="question">14. 사티어의 의사소통 유형 중 "매사에 비판적이고 분석적이며, 자신과 타인의 감정을 모두 무시한 채 오직 '상황' 정보만을 존중하고 객관성만을 고집하는 유형"은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q14" value="1"> 회유형</label></li>
+                <li><label><input type="radio" name="q14" value="2"> 비난형</label></li>
+                <li><label><input type="radio" name="q14" value="3"> 초이성형</label></li>
+                <li><label><input type="radio" name="q14" value="4"> 산만형</label></li>
+                <li><label><input type="radio" name="q14" value="5"> 일치형</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(14, '3', '자신과 타인의 감정적 맥락은 철저히 배제하고 객관적 상황과 이성적 통계만을 고집하는 역기능적 소통은 초이성형입니다.')">정답 확인</button>
+            <div id="res14" class="result-box"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="quiz-item">
+            <div class="question">15. 다음 중 경청의 기술 유형 중 "듣는 사람이 대화를 통제하거나 주도하려 하지 않고, 선입관 없이 말하는 사람을 방해하지 않으며 적극적으로 말할 수 있게 열어두는 바람직한 경청 방식"은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q15" value="1"> 설득적 경청(persuasive listening)</label></li>
+                <li><label><input type="radio" name="q15" value="2"> 주도적 경청(directive listening)</label></li>
+                <li><label><input type="radio" name="q15" value="3"> 주의집중적 경청(attentive listening)</label></li>
+                <li><label><input type="radio" name="q15" value="4"> 분석적 경청(analytical listening)</label></li>
+                <li><label><input type="radio" name="q15" value="5"> 평가적 경청(evaluative listening)</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(15, '3', '통제나 유도 없이 오롯이 상대방의 진술에 온 주의를 집중하여 수용적인 태도로 경청하는 방식은 주의집중적 경청입니다.')">정답 확인</button>
+            <div id="res15" class="result-box"></div>
+        </div>
+
+
+        <h2>II. 단답형 문제 (16~20)</h2>
+
+        <!-- Q16 -->
+        <div class="quiz-item">
+            <div class="question">16. 부모가 자녀에게 준 자원과 자녀가 노년의 부모에게 반환하는 돌봄이 장기적인 생애과정을 거쳐 균형을 이룬다는 모델을 가리키는 자원이전 모델의 명칭을 쓰시오.</div>
+            <input type="text" id="q16" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(16, ['장기적 호혜성', '장기적호혜성', '지연된 호혜성', '생애과정 호혜성'], '시간 차를 두고 부모-자녀 간 주고받음의 장기적 균형이 달성되는 현상을 장기적 호혜성이라고 합니다.')">정답 확인</button>
+            <div id="res16" class="result-box"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="quiz-item">
+            <div class="question">17. 주거독립 이후 경제적 상황이나 사회적 여건 등으로 인해 다시 부모의 집으로 돌아오는 성인자녀들을 일컫는 신조어 명칭을 쓰시오.</div>
+            <input type="text" id="q17" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(17, ['부메랑 키즈', '부메랑키즈', '부메랑'], '독립했다가 부모 품으로 되돌아오는 성인 자녀들을 부메랑 키즈라고 부릅니다.')">정답 확인</button>
+            <div id="res17" class="result-box"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="quiz-item">
+            <div class="question">18. 언어적 메시지와 비언어적 메시지의 의미가 일치하지 않고 모순되게 소통하여 수신자를 혼란스럽게 만드는 역기능적 의사소통 상황(예: 화를 내며 사과하는 행위 등)을 가리키는 용어는 무엇인가?</div>
+            <input type="text" id="q18" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(18, ['이중구속 메시지', '이중구속메시지', '이중구속'], '말의 내용과 비언어적 행동 단서가 모순을 일으켜 빠져나갈 수 없게 만드는 소통을 이중구속 메시지라고 합니다.')">정답 확인</button>
+            <div id="res18" class="result-box"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="quiz-item">
+            <div class="question">19. 사티어(Satir)의 의사소통 유형 중 자신, 타인, 상황을 모두 존중하며 언어적 메시지와 비언어적 메시지가 투명하게 일치하는 가장 기능적이고 바람직한 유형의 명칭을 쓰시오.</div>
+            <input type="text" id="q19" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(19, ['일치형', '일치형 의사소통'], '사티어의 의사소통 유형 중 삼요소를 모두 존중하며 솔직하게 표현하는 유일한 유형은 일치형입니다.')">정답 확인</button>
+            <div id="res19" class="result-box"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="quiz-item">
+            <div class="question">20. 상대방의 행동을 비난하지 않고 그것이 나에게 미친 영향과 그로 인한 나의 주관적 감정을 솔직하게 진술하는 효율적 표현 기법의 명칭을 쓰시오.</div>
+            <input type="text" id="q20" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(20, ['나-전달법', '나전달법', 'I-Message', '아이메시지'], '상대의 행동과 사람을 분리시켜 내 감정을 효과적으로 표출하는 방식을 나-전달법이라고 합니다.')">정답 확인</button>
+            <div id="res20" class="result-box"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 객관식 정답 확인 함수
+    function checkRadio(qNum, correctVal, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const options = document.getElementsByName('q' + qNum);
+        let selected = "";
+        
+        for(let i=0; i<options.length; i++) {
+            if(options[i].checked) {
+                selected = options[i].value;
+                break;
+            }
+        }
+        
+        if(!selected) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.innerHTML = "문제를 선택해 주세요.";
+            return;
+        }
+        
+        resDiv.style.display = "block";
+        if(selected === correctVal) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 고민해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+
+    // 단답형 정답 확인 함수
+    function checkText(qNum, correctArray, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const inputVal = document.getElementById('q' + qNum).value.trim();
+        
+        if(!inputVal) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "정답을 입력해 주세요.";
+            return;
+        }
+        
+        let isCorrect = correctArray.some(ans => inputVal.toLowerCase() === ans.toLowerCase());
+        
+        resDiv.style.display = "block";
+        if(isCorrect) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 확인해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+</script>
+
+</body>
+</html>
+
