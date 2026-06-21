@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>9주차 퀴즈 - 결혼생활</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* 단답형 입력창 */
+        .short-answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        /* 정답 버튼 및 해설 */
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #475569;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="active">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html">13주차</a>
+        <a href="14.html">14주차</a>
+        <a href="15.html">15주차</a>
+        <a href="서술형.html">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>9주차 학습 진단 퀴즈: 결혼생활</h1>
+
+    <form id="quizForm" onsubmit="return false;">
+        
+        <h2>I. 5지선다형 문제 (1~15)</h2>
+
+        <div class="quiz-item">
+            <div class="question">1. [span_0](start_span)Olson 등이 제시한 5가지 부부유형 중 갈등 해소 능력과 역할 분배에 대한 만족도가 높으며, 결혼 전 커플 유형의 특성이 결혼 후에도 동일하게 유지되는 가장 이상적인 부부 유형은 무엇인가?[span_0](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="1"> 활력이 넘치는 부부</label></li>
+                <li><label><input type="radio" name="q1" value="2"> 조화로운 부부</label></li>
+                <li><label><input type="radio" name="q1" value="3"> 전통적 부부</label></li>
+                <li><label><input type="radio" name="q1" value="4"> 과도기형 부부</label></li>
+                <li><label><input type="radio" name="q1" value="5"> 평등형 부부</label></li>
+            </ul>
+            [span_1](start_span)<button type="button" class="btn-check" onclick="checkRadio(1, '1', '활력이 넘치는 부부는 갈등 해소 능력, 역할 분배 만족도가 높고 결혼 전 커플과 동일한 유형을 유지하는 강점을 가집니다.[span_1](end_span)')">정답 확인</button>
+            <div id="res1" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_2](start_span)<div class="question">2. Olson 등의 부부유형 분류 기준에 포함되지 않는 영역은 다음 중 어느 것인가?[span_2](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="1"> 성격문제 및 의사소통</label></li>
+                <li><label><input type="radio" name="q2" value="2"> 갈등 해소 및 가계 운영</label></li>
+                <li><label><input type="radio" name="q2" value="3"> 자녀 양육 및 정신적 가치</label></li>
+                <li><label><input type="radio" name="q2" value="4"> 부부의 교육수준 및 지리적 근접성</label></li>
+                <li><label><input type="radio" name="q2" value="5"> 취미활동 및 성관계</label></li>
+            </ul>
+            [span_3](start_span)<button type="button" class="btn-check" onclick="checkRadio(2, '4', '부부유형 분류의 10가지 기준은 성격문제, 의사소통, 갈등 해소, 가계 운영, 취미활동, 성관계, 자녀 양육, 친구와 가족, 평등한 역할, 정신적 가치입니다. 교육수준과 지리적 근접성은 포함되지 않습니다.[span_3](end_span)')">정답 확인</button>
+            <div id="res2" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_4](start_span)<div class="question">3. Flowers와 Olson(1969)의 연구에 대한 설명으로 옳은 것을 고르시오.[span_4](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="1"> 결혼 만족도는 고정되어 절대 변하지 않는다.</label></li>
+                <li><label><input type="radio" name="q3" value="2"> 결혼 전 커플 관계의 질을 통해서는 결혼 만족도를 전혀 예측할 수 없다.</label></li>
+                <li><label><input type="radio" name="q3" value="3"> 결혼 전 커플 관계의 질을 통해 결혼 만족도를 예측할 수 있으나, 불행 정도나 만족도는 시간에 따라 변화 가능하다.</label></li>
+                <li><label><input type="radio" name="q3" value="4"> 갈등 부부가 매우 행복하게 살 확률이 활력이 넘치는 부부보다 높다.</label></li>
+                <li><label><input type="radio" name="q3" value="5"> 전통적 부부는 이혼율이 90% 이상으로 가장 높다.</label></li>
+            </ul>
+            [span_5](start_span)<button type="button" class="btn-check" onclick="checkRadio(3, '3', '결혼 전 관계의 질로 예측은 가능하지만, 만족도나 불행 정도는 시간에 따라 변화할 수 있다고 기술되어 있습니다.[span_5](end_span)')">정답 확인</button>
+            <div id="res3" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_6](start_span)<div class="question">4. 부부가 이혼이나 별거를 하지 않고 혼인관계를 지속하고 있는 상태를 뜻하는 개념은 무엇인가?[span_6](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="1"> 결혼 안정도(marital stability)</label></li>
+                <li><label><input type="radio" name="q4" value="2"> 결혼 만족도(marriage satisfaction)</label></li>
+                <li><label><input type="radio" name="q4" value="3"> 자아 분화(differentiation of self)</label></li>
+                <li><label><input type="radio" name="q4" value="4"> 세대 간 결속(intergenerational solidarity)</label></li>
+                <li><label><input type="radio" name="q4" value="5"> 관계적 유연성(flexibility)</label></li>
+            </ul>
+            [span_7](start_span)[span_8](start_span)<button type="button" class="btn-check" onclick="checkRadio(4, '1', '부부가 이혼이나 별거를 하지 않고 혼인관계를 유지하는가 여부는 결혼 안정도에 해당합니다.[span_7](end_span)[span_8](end_span)')">정답 확인</button>
+            <div id="res4" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_9](start_span)<div class="question">5. 부부관계의 질을 평가할 때 '결혼 안정도'보다 '결혼 만족도'를 통해 주로 평가하는 결정적인 이유는 무엇인가?[span_9](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="1"> 법적 절차가 더 간단하기 때문에</label></li>
+                <li><label><input type="radio" name="q5" value="2"> 향후 이혼 발생을 예측 가능하게 해주기 때문에</label></li>
+                <li><label><input type="radio" name="q5" value="3"> 자녀의 성적 향상에 직접적인 영향을 주기 때문에</label></li>
+                <li><label><input type="radio" name="q5" value="4"> 경제적 수입을 명확하게 파악할 수 있기 때문에</label></li>
+                <li><label><input type="radio" name="q5" value="5"> 부부간의 나이 차이를 좁혀주기 때문에</label></li>
+            </ul>
+            [span_10](start_span)<button type="button" class="btn-check" onclick="checkRadio(5, '2', '결혼만족도가 낮은 부부가 높은 부부에 비해 이혼 가능성이 상대적으로 높기 때문에, 향후 이혼을 예측할 수 있는 결혼만족도를 통해 관계의 질을 평가합니다.[span_10](end_span)')">정답 확인</button>
+            <div id="res5" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_11](start_span)<div class="question">6. Bernard(1972)의 페미니즘 시각에서 여성이 남성보다 결혼 만족도가 낮게 나타나는 원인으로 꼽은 요인과 거리가 먼 것은?[span_11](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="1"> 남성이 여성보다 결혼을 통해 얻는 이익이 더 크기 때문에</label></li>
+                <li><label><input type="radio" name="q6" value="2"> 남성과 여성이 가족 내에서 갖는 권력의 크기가 다르기 때문에</label></li>
+                <li><label><input type="radio" name="q6" value="3"> 여성은 자녀 양육과 가사에 대해 더 많은 부담을 갖기 때문에</label></li>
+                <li><label><input type="radio" name="q6" value="4"> 남성에 비해 여성이 부부폭력에 더 취약하기 때문에</label></li>
+                <li><label><input type="radio" name="q6" value="5"> 여성이 남성보다 사회적 대인관계 형성 능력이 선천적으로 부족하기 때문에</label></li>
+            </ul>
+            [span_12](start_span)<button type="button" class="btn-check" onclick="checkRadio(6, '5', 'Bernard는 사회구조적 불평등(이익 차이, 권력 차이, 가사 부담, 폭력 취약성)을 원인으로 꼽았으며, 여성의 선천적 능력 부족을 언급하지 않았습니다.[span_12](end_span)')">정답 확인</button>
+            <div id="res6" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_13](start_span)<div class="question">7. Jacken과 동료들(2014)의 메타분석 결과에 근거할 때, 어떤 집단을 제외하면 결혼 만족도에서 유의한 성별 차이가 나타나지 않았는가?[span_13](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="1"> 맞벌이 가구 부부</label></li>
+                <li><label><input type="radio" name="q7" value="2"> 심리상담이나 가족치료를 받은 부부</label></li>
+                <li><label><input type="radio" name="q7" value="3"> 다문화 가정 부부</label></li>
+                <li><label><input type="radio" name="q7" value="4"> 무자녀 비혼동거 커플</label></li>
+                <li><label><input type="radio" name="q7" value="5"> 주거 독립을 미룬 캥거루족 가구</label></li>
+            </ul>
+            [span_14](start_span)<button type="button" class="btn-check" onclick="checkRadio(7, '2', 'Jacken 등의 메타분석 결과, 심리상담이나 가족치료를 받은 부부를 제외하면 일반 부부들 사이에서는 결혼 만족도의 유의한 성별 차이가 나타나지 않았습니다.[span_14](end_span)')">정답 확인</button>
+            <div id="res7" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_15](start_span)<div class="question">8. 결혼만족도의 'U자 곡선 변화 양상'에 대한 학계의 방법론적 비판 내용에 해당하지 않는 것은?[span_15](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="1"> 대다수의 연구가 횡단연구(cross-sectional study)로 진행되었다는 오류</label></li>
+                <li><label><input type="radio" name="q8" value="2"> 연령 효과(age effect) 및 세대 효과(cohort effect)의 혼재</label></li>
+                <li><label><input type="radio" name="q8" value="3"> 불만족스러운 부부가 이미 이혼하여 배제되는 선택 효과(selection bias)</label></li>
+                <li><label><input type="radio" name="q8" value="4"> 오랜 기간 결혼을 유지한 이들의 자기합리화 경향성</label></li>
+                <li><label><input type="radio" name="q8" value="5"> 생리학적 관점의 일반적응증후군 단계를 반영하지 못했다는 점</label></li>
+            </ul>
+            [span_16](start_span)[span_17](start_span)<button type="button" class="btn-check" onclick="checkRadio(8, '5', '일반적응증후군은 14주차의 셀리에 스트레스 이론 내용이며, U자 곡선 비판에는 횡단연구 다수, 연령/세대/선택 효과, 자기합리화, 다양한 가족형태 설명 불가 등이 있습니다.[span_16](end_span)[span_17](end_span)')">정답 확인</button>
+            <div id="res8" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_18](start_span)<div class="question">9. "두 배우자 사이에 발생하는 교환, 즉 보상과 비용에 대한 인지 결과에 의해 부부관계가 생성, 발전, 소멸된다"고 보는 이론은 무엇인가?[span_18](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="1"> 애착이론</label></li>
+                <li><label><input type="radio" name="q9" value="2"> 사회교환이론</label></li>
+                <li><label><input type="radio" name="q9" value="3"> 역동적 목표이론</label></li>
+                <li><label><input type="radio" name="q9" value="4"> 균형이론</label></li>
+                <li><label><input type="radio" name="q9" value="5"> 가족체계이론</label></li>
+            </ul>
+            [span_19](start_span)<button type="button" class="btn-check" onclick="checkRadio(9, '2', '보상과 비용의 인지 결과(보상 > 비용 = 결혼 유지)를 바탕으로 설명을 전개하는 이론은 사회교환이론입니다.[span_19](end_span)')">정답 확인</button>
+            <div id="res9" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_20](start_span)<div class="question">10. 역동적 목표이론에서 설명하는 세 가지 결혼 목표 중 "결혼생활을 통해 소속감과 연결됨을 경험하고자 하는 목표"는 무엇인가?[span_20](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="1"> 개인 성장 목표</label></li>
+                <li><label><input type="radio" name="q10" value="2"> 도구적 목표</label></li>
+                <li><label><input type="radio" name="q10" value="3"> 동반자적 목표</label></li>
+                <li><label><input type="radio" name="q10" value="4"> 규범적 목표</label></li>
+                <li><label><input type="radio" name="q10" value="5"> 기능적 목표</label></li>
+            </ul>
+            [span_21](start_span)<button type="button" class="btn-check" onclick="checkRadio(10, '3', '소속감과 연결됨을 경험하고자 하는 결혼생활의 목표는 동반자적 목표입니다.[span_21](end_span)')">정답 확인</button>
+            <div id="res10" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_22](start_span)<div class="question">11. 결혼 만족도에 영향을 주는 요인 중 유연성(flexibility)의 핵심을 가장 잘 나타낸 진술은 무엇인가?[span_22](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q11" value="1"> 열정적인 사랑에 기반하여 결혼하는 것</label></li>
+                <li><label><input type="radio" name="q11" value="2"> 부부의 종교나 신앙이 완벽하게 일치하는 것</label></li>
+                <li><label><input type="radio" name="q11" value="3"> 부부가 얼마나 일치하는가가 아니라 불일치를 어떻게 다루는가</label></li>
+                <li><label><input type="radio" name="q11" value="4"> 부부간의 나이 차이가 전혀 나지 않도록 유연하게 조절하는 것</label></li>
+                <li><label><input type="radio" name="q11" value="5"> 아내가 가사와 노동을 전담하는 전통적 고정관념</label></li>
+            </ul>
+            [span_23](start_span)<button type="button" class="btn-check" onclick="checkRadio(11, '3', '유연성이란 행복한 결혼생활에서 중요한 것은 일치 여부보다 불일치를 어떻게 다루는가에 달려 있다는 관점입니다.[span_23](end_span)')">정답 확인</button>
+            <div id="res11" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_24](start_span)<div class="question">12. 성역할 분화 유형 중 외형적으로는 남녀가 책임을 공동으로 분담하는 듯 보이지만, 실제 일-가족 충돌 상황이 발생했을 때 아내가 자신의 사회활동을 희생하는 경향을 보이는 유형은?[span_24](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q12" value="1"> 역할분리형</label></li>
+                <li><label><input type="radio" name="q12" value="2"> 역할공유형</label></li>
+                <li><label><input type="radio" name="q12" value="3"> 과도기형</label></li>
+                <li><label><input type="radio" name="q12" value="4"> 평등형</label></li>
+                <li><label><input type="radio" name="q12" value="5"> 분리형</label></li>
+            </ul>
+            [span_25](start_span)<button type="button" class="btn-check" onclick="checkRadio(12, '3', '역할분리형에서 공유형으로 넘어가는 과정에 있는 과도기형은 외형과 달리 위기 시 아내의 경제활동이 희생되는 특징을 보입니다.[span_25](end_span)')">정답 확인</button>
+            <div id="res12" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_26](start_span)<div class="question">13. 김재엽(1997)의 연구에 따르면, 다음 부부 권력 구조 중 '부부폭력 비율'이 가장 높은 유형은 무엇인가?[span_26](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q13" value="1"> 평등형</label></li>
+                <li><label><input type="radio" name="q13" value="2"> 권력분리형</label></li>
+                <li><label><input type="radio" name="q13" value="3"> 분리형</label></li>
+                <li><label><input type="radio" name="q13" value="4"> 남성우위형</label></li>
+                <li><label><input type="radio" name="q13" value="5"> 여성우위형</label></li>
+            </ul>
+            [span_27](start_span)<button type="button" class="btn-check" onclick="checkRadio(13, '4', '부부폭력 비율은 남성우위형 > 여성우위형 > 권력분리형 > 평등형 순으로 높게 나타납니다.[span_27](end_span)')">정답 확인</button>
+            <div id="res13" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_28](start_span)<div class="question">14. Rodman(1972)의 규범적 자원이론에 대한 설명으로 옳은 것을 고르시오.[span_28](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q14" value="1"> 부부 권력은 오직 경제적 수입과 교육 수준에 의해서만 결정된다.</label></li>
+                <li><label><input type="radio" name="q14" value="2"> 부부 권력 분포는 사회·문화적 규범의 영향을 함께 받는다.</label></li>
+                <li><label><input type="radio" name="q14" value="3"> 평등적 규범하에서도 남편의 상대적 자원이 많으면 무조건 권력이 정적인 관계를 가진다.</label></li>
+                <li><label><input type="radio" name="q14" value="4"> 이혼으로 얻을 수 있는 자원의 양만을 전적으로 비교한다.</label></li>
+                <li><label><input type="radio" name="q14" value="5"> 최소관심의 원칙을 설명하는 유일한 이론이다.</label></li>
+            </ul>
+            [span_29](start_span)<button type="button" class="btn-check" onclick="checkRadio(14, '2', '규범적 자원이론은 개인이 가진 자원뿐만 아니라 해당 사회의 규범과 성역할 태도를 함께 고려하는 이론입니다.[span_29](end_span)')">정답 확인</button>
+            <div id="res14" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_30](start_span)<div class="question">15. 부부재산제 중 "혼인 중에는 각자의 재산으로 유지되는 별산제를 적용하다가, 결혼이 해소(이혼 등)된 후에는 공유재산제를 적용하는 제도"를 가리키는 명칭은?[span_30](end_span)</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q15" value="1"> 법정재산제</label></li>
+                <li><label><input type="radio" name="q15" value="2"> 분리재산제</label></li>
+                <li><label><input type="radio" name="q15" value="3"> 공동재산제</label></li>
+                <li><label><input type="radio" name="q15" value="4"> 잉여공유제(유예공동제)</label></li>
+                <li><label><input type="radio" name="q15" value="5"> 부부계약제</label></li>
+            </ul>
+            [span_31](start_span)<button type="button" class="btn-check" onclick="checkRadio(15, '4', '혼인 중에는 별산제, 해소 후에는 공유재산제를 적용하는 독일 등의 제도는 잉여공유제(유예공동제)입니다.[span_31](end_span)')">정답 확인</button>
+            <div id="res15" class="result-box"></div>
+        </div>
+
+
+        <h2>II. 단답형 문제 (16~20)</h2>
+
+        <div class="quiz-item">
+            [span_32](start_span)<div class="question">16. Olson 등의 부부 유형 중, 73%가 이혼을 고려한 경험이 있으며 부부간의 의사소통과 문제해결능력이 전반적으로 낮은 편에 속하는 유형의 이름을 쓰시오.[span_32](end_span)</div>
+            <input type="text" id="q16" class="short-answer-input" placeholder="정답 입력">
+            [span_33](start_span)<button type="button" class="btn-check" onclick="checkText(16, ['갈등 부부', '갈등부부', '갈등'], '의사소통과 문제해결능력이 낮고 73%가 이혼을 고려해 본 경험이 있는 유형은 갈등 부부입니다.[span_33](end_span)')">정답 확인</button>
+            <div id="res16" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_34](start_span)<div class="question">17. 배우자가 정서적 보상을 제공할 때 만족도가 상승하며 보상과 비용의 상호작용 행동 자체에 초점을 맞추지만, 성격이나 성장 배경 등 행동의 맥락을 고려하지 못한다는 비판을 받는 부부만족 이론은 무엇인가?[span_34](end_span)</div>
+            <input type="text" id="q17" class="short-answer-input" placeholder="정답 입력">
+            [span_35](start_span)<button type="button" class="btn-check" onclick="checkText(17, ['행동이론', '행동 이론'], '보상과 비용의 상호작용 행동에 초점을 맞추나 맥락을 간과했다는 비판을 받는 이론은 행동이론입니다.[span_35](end_span)')">정답 확인</button>
+            <div id="res17" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_36](start_span)<div class="question">18. 역동적 목표이론에서 결혼생활을 통해 자아를 발전시키고 실현하고자 하는 욕구(예: 미켈란젤로 현상)와 관련된 목표의 명칭을 쓰시오.[span_36](end_span)</div>
+            <input type="text" id="q18" class="short-answer-input" placeholder="정답 입력">
+            [span_37](start_span)<button type="button" class="btn-check" onclick="checkText(18, ['개인 성장 목표', '개인성장목표', '개인 성장', '개인성장'], '자아 발전 및 실현을 중시하는 목표는 개인 성장 목표입니다.[span_37](end_span)')">정답 확인</button>
+            <div id="res18" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_38](start_span)<div class="question">19. Heider(1946)가 제시한 이론으로 주요인물(P), 타인(O), 사람이 아닌 대상/이슈(X) 사이의 대칭구조와 심리적 선호 경향성을 통해 부부 권력을 설명하는 이론의 명칭은 무엇인가?[span_38](end_span)</div>
+            <input type="text" id="q19" class="short-answer-input" placeholder="정답 입력">
+            [span_39](start_span)<button type="button" class="btn-check" onclick="checkText(19, ['균형이론', '균형 이론'], 'P-O-X 삼각형 삼자관계를 통해 심리적 대칭과 안정을 선호하는 인간의 성향을 다룬 이론은 균형이론입니다.[span_39](end_span)')">정답 확인</button>
+            <div id="res19" class="result-box"></div>
+        </div>
+
+        <div class="quiz-item">
+            [span_40](start_span)<div class="question">20. 대한민국 민법(제829조~제833조)이 규정하고 있는 부부재산제의 기본 원칙으로, 혼인 전 계약이 따로 없는 한 부부 각자가 결혼 전부터 가진 고유재산과 혼인 중 자기 명의로 취득한 재산을 각자의 재산으로 인정하는 제도의 명칭은 무엇인가?[span_40](end_span)</div>
+            <input type="text" id="q20" class="short-answer-input" placeholder="정답 입력">
+            [span_41](start_span)<button type="button" class="btn-check" onclick="checkText(20, ['부부별산제', '별산제', '부부 별산제'], '우리나라는 법정재산제로 부부별산제를 원칙으로 채택하고 있습니다.[span_41](end_span)')">정답 확인</button>
+            <div id="res20" class="result-box"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 객관식 정답 확인 함수
+    function checkRadio(qNum, correctVal, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const options = document.getElementsByName('q' + qNum);
+        let selected = "";
+        
+        for(let i=0; i<options.length; i++) {
+            if(options[i].checked) {
+                selected = options[i].value;
+                break;
+            }
+        }
+        
+        if(!selected) {
+            resDiv.style.display = "block";
+            resDiv.className = "result box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.innerHTML = "문제를 선택해 주세요.";
+            return;
+        }
+        
+        resDiv.style.display = "block";
+        if(selected === correctVal) {
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 고민해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+
+    // 단답형 정답 확인 함수
+    function checkText(qNum, correctArray, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const inputVal = document.getElementById('q' + qNum).value.trim();
+        
+        if(!inputVal) {
+            resDiv.style.display = "block";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "정답을 입력해 주세요.";
+            return;
+        }
+        
+        let isCorrect = correctArray.some(ans => inputVal.toLowerCase() === ans.toLowerCase());
+        
+        resDiv.style.display = "block";
+        if(isCorrect) {
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 확인해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+</script>
+
+</body>
+</html>
