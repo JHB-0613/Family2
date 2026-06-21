@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>서술형 과제 - 나의 가치관 돌아보기</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .essay-item {
+            margin-top: 30px;
+            padding: 25px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background-color: #f8fafc;
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #1e293b;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .guide-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #64748b;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #475569;
+        }
+        .guide-box ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        .essay-textarea {
+            width: 100%;
+            height: 350px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1.05em;
+            font-family: inherit;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        .essay-textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-submit {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+        .btn-save {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .btn-save:hover {
+            background-color: #27ae60;
+        }
+        .result-box {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #e2f0d9;
+            border: 1px solid #b4c6e7;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #2f5597;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .result-content {
+            white-space: pre-wrap;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 중앙 네비게이션 바 -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html">13주차</a>
+        <a href="14.html">14주차</a>
+        <a href="15.html">15주차</a>
+        <a href="서술형.html" class="active">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>학습 종합 서술형 과제</h1>
+
+    <div class="essay-item">
+        <div class="question-title">
+            [논술형 기말 과제] <br>
+            &lt;결혼과 가족&gt; 강의를 한 학기 동안 수강하면서 새롭게 알게 된 이론적 사실이나 사회적 현상을 바탕으로, 결혼·가족·부모됨 등에 대한 '나의 가치관 변화'에 대해 논리적으로 서술하시오.
+        </div>
+
+        <div class="guide-box">
+            <strong>※ 작성 가이드라인:</strong>
+            <ul>
+                <li>수강 전 본인이 가지고 있던 생각과 수강 후 변화된 생각을 비교하여 기술하세요.</li>
+                <li>강의 중 인상 깊었던 개념(예: 부부 유형, 양육태도, 세대 간 결속, 일-가족 양립, 가족체계 등)을 최소 1가지 이상 인용하세요.</li>
+                <li>단순한 감상에 그치지 말고, 나의 미래 설계나 가치관 정립에 어떤 영향을 미쳤는지 구체적으로 논술하세요.</li>
+            </ul>
+        </div>
+
+        <textarea id="essayAnswer" class="essay-textarea" placeholder="이곳에 내용을 입력하세요..."></textarea>
+
+        <div class="button-group">
+            <button class="btn btn-submit" onclick="submitEssay()">작성 완료</button>
+            <button class="btn btn-save" onclick="saveAsFile()">텍스트 파일로 저장</button>
+        </div>
+
+        <div id="resultBox" class="result-box">
+            <div class="result-title">✓ 성공적으로 제출되었습니다. 내가 작성한 내용:</div>
+            <div id="resultContent" class="result-content"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitEssay() {
+        const text = document.getElementById('essayAnswer').value.trim();
+        const resultBox = document.getElementById('resultBox');
+        const resultContent = document.getElementById('resultContent');
+
+        if (!text) {
+            alert('내용을 입력한 후 완료 버튼을 눌러주세요.');
+            return;
+        }
+
+        resultBox.style.display = 'block';
+        resultContent.textContent = text;
+        window.scrollTo({
+            top: resultBox.offsetTop + 100,
+            behavior: 'smooth'
+        });
+    }
+
+    function saveAsFile() {
+        const text = document.getElementById('essayAnswer').value.trim();
+        if (!text) {
+            alert('저장할 내용이 없습니다.');
+            return;
+        }
+
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = '결혼과가족_가치관_변화_서술형과제.txt';
+        link.click();
+        URL.revokeObjectURL(link.href);
+    }
+</script>
+
+</body>
+</html>
+
