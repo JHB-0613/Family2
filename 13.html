@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>13주차 퀴즈 - 나와 우리가족 돌아보기</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        /* 네비게이션 바 스타일 */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        /* 컨텐츠 레이아웃 */
+        .container {
+            max-width: 850px;
+            margin: 80px auto 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .quiz-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background-color: #f8fafc;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .options label:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        /* 단답형 입력창 */
+        .short-answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        /* 정답 버튼 및 해설 */
+        .btn-check {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-check:hover {
+            background-color: #2980b9;
+        }
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            font-size: 0.95em;
+            color: #475569;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 상단 중앙 네비게이션 바 -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">9주차</a>
+        <a href="10.html">10주차</a>
+        <a href="11.html">11주차</a>
+        <a href="12.html">12주차</a>
+        <a href="13.html" class="active">13주차</a>
+        <a href="14.html">14주차</a>
+        <a href="15.html">15주차</a>
+        <a href="서술형.html">서술형 모음</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>13주차 학습 진단 퀴즈: 나와 우리가족 돌아보기</h1>
+
+    <form id="quizForm" onsubmit="return false;">
+        
+        <h2>I. 5지선다형 문제 (1~15)</h2>
+
+        <!-- Q1 -->
+        <div class="quiz-item">
+            <div class="question">1. 프로이트(Freud)의 성격 구조 이론 중 사회문화적 규범이 내면화된 것으로, 도덕적 양심과 자아가 추구하는 이상에 의해 작동하는 요소는 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="1"> 원초아(id)</label></li>
+                <li><label><input type="radio" name="q1" value="2"> 자아(ego)</label></li>
+                <li><label><input type="radio" name="q1" value="3"> 초자아(super ego)</label></li>
+                <li><label><input type="radio" name="q1" value="4"> 전의식</label></li>
+                <li><label><input type="radio" name="q1" value="5"> 리비도</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(1, '3', '초자아(super ego)는 사회문화적 규범의 내면화, 도덕적 양심과 자아가 추구하는 이상에 의해 작동하는 성격 구조입니다.')">정답 확인</button>
+            <div id="res1" class="result-box"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-item">
+            <div class="question">2. 프로이트의 심리성적 발달단계 중 '자아(ego)가 확립되며, 부모로부터 분리되어 독립하는 것을 목표로 두는 단계'는 언제인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="1"> 구강기</label></li>
+                <li><label><input type="radio" name="q2" value="2"> 항문기</label></li>
+                <li><label><input type="radio" name="q2" value="3"> 남근기</label></li>
+                <li><label><input type="radio" name="q2" value="4"> 잠복기</label></li>
+                <li><label><input type="radio" name="q2" value="5"> 생식기</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(2, '5', '생식기는 12세~사춘기 시기로 자아가 확립되며 부모로부터 분리되어 독립하는 것을 목표로 둡니다.')">정답 확인</button>
+            <div id="res2" class="result-box"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-item">
+            <div class="question">3. 에릭슨(Erikson)의 심리사회적 발달단계 중 대학생 및 청년기가 속하는 '성인초기'의 핵심 발달과업(위기)은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="1"> 정체성 대 혼돈</label></li>
+                <li><label><input type="radio" name="q3" value="2"> 근면성 대 열등감</label></li>
+                <li><label><input type="radio" name="q3" value="3"> 주도성 대 죄의식</label></li>
+                <li><label><input type="radio" name="q3" value="4"> 친밀감 대 고립감</label></li>
+                <li><label><input type="radio" name="q3" value="5"> 생산성 대 침체</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(3, '4', '성인초기(20대~40대 초반)에는 이전 단계에서 자아정체감이 확립되면 타인의 정체성과 연결하여 친밀감을 형성하는 친밀감 대 고립감 단계를 겪습니다.')">정답 확인</button>
+            <div id="res3" class="result-box"></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-item">
+            <div class="question">4. 아들러(Adler)의 개인심리학에 근거할 때, 인간 행동을 유발하는 원천이자 추진력이며 모든 노력의 원천이 되는 핵심 개념은 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="1"> 리비도(Libido)</label></li>
+                <li><label><input type="radio" name="q4" value="2"> 무의식적 충동</label></li>
+                <li><label><input type="radio" name="q4" value="3"> 열등감</label></li>
+                <li><label><input type="radio" name="q4" value="4"> 자아분화 수준</label></li>
+                <li><label><input type="radio" name="q4" value="5"> 만성불안</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(4, '3', '아들러는 열등감이 인간의 모든 행동에 영향을 끼치는 요소이며, 행동의 동기를 부여하는 추진력이고 모든 노력의 원천이라고 보았습니다.')">정답 확인</button>
+            <div id="res4" class="result-box"></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-item">
+            <div class="question">5. 아들러의 출생순위별 성격 특징 중 '성취지향적이고 책임감이 강하며 사회에 순응적이고 전통 지향적인 성향을 보여 리더십을 발휘하기 유리한 위치'는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="1"> 맏이</label></li>
+                <li><label><input type="radio" name="q5" value="2"> 둘째</label></li>
+                <li><label><input type="radio" name="q5" value="3"> 가운데</label></li>
+                <li><label><input type="radio" name="q5" value="4"> 막내</label></li>
+                <li><label><input type="radio" name="q5" value="5"> 외동</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(5, '1', '맏이는 성취지향적이고 책임감이 강하며 사회 순응적, 전통 지향적인 장점들 덕분에 리더십을 발휘하는 특징을 가집니다.')">정답 확인</button>
+            <div id="res5" class="result-box"></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="quiz-item">
+            <div class="question">6. 아들러의 출생순위 특징 중 '이미 자리를 확보한 첫째와 사랑을 독차지하는 동생 사이에 끼어 압박감을 느끼며, 자신이 사랑받지 못하고 방치된다는 느낌을 받기 쉬운 위치'는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="1"> 맏이</label></li>
+                <li><label><input type="radio" name="q6" value="2"> 둘째</label></li>
+                <li><label><input type="radio" name="q6" value="3"> 가운데</label></li>
+                <li><label><input type="radio" name="q6" value="4"> 막내</label></li>
+                <li><label><input type="radio" name="q6" value="5"> 외동</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(6, '3', '가운데 아이(형제가 셋일 경우 둘째)는 첫째와 동생 사이에 끼어 압박감을 느끼고 사랑받지 못한다는 느낌을 받기 쉽습니다.')">정답 확인</button>
+            <div id="res6" class="result-box"></div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="quiz-item">
+            <div class="question">7. 보웬(Bowen)의 가족체계이론의 근본적 목표이며, 항상 존재하는 '만성불안' 속에서 벗어나 미분화된 가족 자아군으로부터 독립하는 것을 의미하는 개념은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="1"> 삼각관계 탈피</label></li>
+                <li><label><input type="radio" name="q7" value="2"> 자아분화(Differentiation of Self)</label></li>
+                <li><label><input type="radio" name="q7" value="3"> 핵가족 정서과정 차단</label></li>
+                <li><label><input type="radio" name="q7" value="4"> 가족투사 거부</label></li>
+                <li><label><input type="radio" name="q7" value="5"> 정서적 단절 극복</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(7, '2', '보웬 가족체계이론의 치료 목표는 만성불안에 휩쓸리지 않고 미분화된 가족 자아군으로부터 벗어나는 자아분화 수준을 높이는 것입니다.')">정답 확인</button>
+            <div id="res7" class="result-box"></div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="quiz-item">
+            <div class="question">8. 보웬의 이론에서 자아분화 수준이 낮은 사람들의 일반적인 관계적 특징으로 옳은 것은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q8" value="1"> 타인과의 마찰, 비난, 거절 등에 지배를 덜 받는다.</label></li>
+                <li><label><input type="radio" name="q8" value="2"> 타인을 기쁘게 하기 위해 자신의 생각과 행동을 쉽게 바꾼다.</label></li>
+                <li><label><input type="radio" name="q8" value="3"> 타인 의존성의 적절성을 스스로 잘 인식하고 대처한다.</label></li>
+                <li><label><input type="radio" name="q8" value="4"> 이타적인 행동을 할 때에도 철저히 이성적으로 선택한다.</label></li>
+                <li><label><input type="radio" name="q8" value="5"> 만성불안 상황에서도 감정반사반응을 일으키지 않는다.</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(8, '2', '자아분화 수준이 낮은 사람은 타인의 수용과 인정에 지나치게 민감하여 타인의 생각에 맞게 자신의 생각과 행동을 바꾸는 경향이 있습니다.')">정답 확인</button>
+            <div id="res8" class="result-box"></div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="quiz-item">
+            <div class="question">9. 보웬치료이론에서 가족 내 두 사람의 관계가 소원하거나 밀착되어 긴장이 유발될 때, 불안을 피하기 위해 또 다른 제3자나 사물을 관계 속으로 끌어들이는 정서적 역동을 뜻하는 용어는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q9" value="1"> 다세대 전수</label></li>
+                <li><label><input type="radio" name="q9" value="2"> 가족 투사</label></li>
+                <li><label><input type="radio" name="q9" value="3"> 정서적 단절</label></li>
+                <li><label><input type="radio" name="q9" value="4"> 삼각관계(Triangles)</label></li>
+                <li><label><input type="radio" name="q9" value="5"> 가짜 자아 형성</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(9, '4', '두 사람의 정서적 관계 내에 긴장과 불안이 발생할 때 제3자를 끌어들여 불안을 분산하려는 현상을 삼각관계(Triangles)라고 합니다.')">정답 확인</button>
+            <div id="res9" class="result-box"></div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="quiz-item">
+            <div class="question">10. 부모의 미분화로 인해 생긴 불안이나 정서적 문제가 자녀에게 대를 걸쳐 반복되어, 자녀의 기능 손상을 유발하고 조현병 등 증상에 취약하게 만드는 과정을 무엇이라 하는가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q10" value="1"> 핵가족 정서과정</label></li>
+                <li><label><input type="radio" name="q10" value="2"> 가족투사과정(Family Projection Process)</label></li>
+                <li><label><input type="radio" name="q10" value="3"> 정서적 단절과정</label></li>
+                <li><label><input type="radio" name="q10" value="4"> 삼각관계화과정</label></li>
+                <li><label><input type="radio" name="q10" value="5"> 형제위치 전수과정</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(10, '2', '부모의 미분화로 인해 정서적 문제가 자녀에게 대를 걸쳐 반복되고 자녀가 기능 손상을 겪게 되는 정서적 역동은 가족투사과정입니다.')">정답 확인</button>
+            <div id="res10" class="result-box"></div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="quiz-item">
+            <div class="question">11. 부모의 정서, 태도, 가치관이 여러 세대를 거치는 동안 분화도의 작은 차이가 크게 확대되어 나타나는 현상으로, 개인의 분화 수준이 배우자 선택(대부분 비슷한 분화 수준의 배우자 선택)에 영향을 미친다고 보는 개념은?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q11" value="1"> 다세대 전수과정(Multigeneration transmission Process)</label></li>
+                <li><label><input type="radio" name="q11" value="2"> 핵가족 정서반사과정</label></li>
+                <li><label><input type="radio" name="q11" value="3"> 관계 민감도 투사과정</label></li>
+                <li><label><input type="radio" name="q11" value="4"> 탈삼각화 전수과정</label></li>
+                <li><label><input type="radio" name="q11" value="5"> 생활양식 전수과정</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(11, '1', '부모와 자녀 간 분화도의 작은 차이가 여러 세대를 거치며 축적·확대되어 전달되는 과정을 다세대 전수과정이라고 합니다.')">정답 확인</button>
+            <div id="res11" class="result-box"></div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="quiz-item">
+            <div class="question">12. 토만(Tomman)의 출생순위 연구 및 보웬의 형제위치 개념에 따를 때, 결혼 후 '우위선점 갈등'이 발생할 가능성이 가장 높은 부부 조합은 어느 것인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q12" value="1"> 여동생을 둔 남성과 오빠가 있는 여성</label></li>
+                <li><label><input type="radio" name="q12" value="2"> 막내 남성과 막내 여성</label></li>
+                <li><label><input type="radio" name="q12" value="3"> 남동생만 있는 남성과 여동생만 있는 여성</label></li>
+                <li><label><input type="radio" name="q12" value="4"> 맏이 남성과 막내 여성</label></li>
+                <li><label><input type="radio" name="q12" value="5"> 외동 남성과 외동 여성</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(12, '3', '교안에 의하면 상호보완적인 커플과 달리 남동생만 있는 남성과 여동생만 있는 여성이 결혼한 커플은 우위선점 갈등을 겪을 가능성이 큽니다.')">정답 확인</button>
+            <div id="res12" class="result-box"></div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="quiz-item">
+            <div class="question">13. 보웬의 이론에서 개인의 낮은 분화수준으로 인해 생긴 원가족과의 문제를 회피하기 위해 가족원들과의 접촉을 줄이거나 완전히 끊어버려, 휴화산과 같이 근본적인 애착문제를 안고 살아가는 상태를 뜻하는 용어는?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q13" value="1"> 가족 투사</label></li>
+                <li><label><input type="radio" name="q13" value="2"> 삼각관계화</label></li>
+                <li><label><input type="radio" name="q13" value="3"> 핵가족 역기능</label></li>
+                <li><label><input type="radio" name="q13" value="4"> 정서적 단절(Emotional Cutoff)</label></li>
+                <li><label><input type="radio" name="q13" value="5"> 미분화 자아군</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(13, '4', '원가족과의 정서적 문제를 다루지 못해 거리를 멀리 두거나 연락을 끊어 긴장을 피하려는 상태를 정서적 단절(Emotional Cutoff)이라고 합니다.')">정답 확인</button>
+            <div id="res13" class="result-box"></div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="quiz-item">
+            <div class="question">14. 보웬이 다세대 가족체계에 관한 방대한 자료를 시각적으로 조직화하고, 세대에 걸쳐 반복되는 가족의 문제적 패턴과 사건들을 이해하기 위해 개발한 도구는 무엇인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q14" value="1"> 생활양식 척도</label></li>
+                <li><label><input type="radio" name="q14" value="2"> 사회재적응 척도</label></li>
+                <li><label><input type="radio" name="q14" value="3"> 가계도(genogram)</label></li>
+                <li><label><input type="radio" name="q14" value="4"> 일반적응 증후군 도표</label></li>
+                <li><label><input type="radio" name="q14" value="5"> 부부유형 스크리닝 매트릭스</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(14, '3', '세대에 걸쳐 나타나는 가족의 행동 패턴, 생물학적·법적 연관성을 시각화하는 도표는 가계도(genogram)입니다.')">정답 확인</button>
+            <div id="res14" class="result-box"></div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="quiz-item">
+            <div class="question">15. 가계도 표준 기호 중 '네모 기호 안에 또 다른 네모(또는 동그라미 안에 동그라미)'로 이중 테두리를 표시하여 나타내는 대상은 누구인가?</div>
+            <ul class="options">
+                <li><label><input type="radio" name="q15" value="1"> 사망한 가족원</label></li>
+                <li><label><input type="radio" name="q15" value="2"> 위탁이나 입양 자녀</label></li>
+                <li><label><input type="radio" name="q15" value="3"> 임신 중인 태아</label></li>
+                <li><label><input type="radio" name="q15" value="4"> 가족관계의 중심(나 또는 환자/프로밴드)</label></li>
+                <li><label><input type="radio" name="q15" value="5"> 약물 및 알코올 남용자</label></li>
+            </ul>
+            <button type="button" class="btn-check" onclick="checkRadio(15, '4', '가계도 기호에서 이중선으로 테두리를 두른 것은 가계도 분석 및 상담의 중심이 되는 나(또는 환자)를 의미합니다.')">정답 확인</button>
+            <div id="res15" class="result-box"></div>
+        </div>
+
+
+        <h2>II. 단답형 문제 (16~20)</h2>
+
+        <!-- Q16 -->
+        <div class="quiz-item">
+            <div class="question">16. 에릭슨의 심리사회이론 5단계(청소년기)의 핵심 발달과업으로, '나는 누구인가, 나의 신념과 가치관은 무엇인가'를 성공적으로 정립했을 때 획득하게 되는 상태를 무엇이라 하는가?</div>
+            <input type="text" id="q16" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(16, ['자아정체감', '자아 정체감', '정체감', '정체성'], '청소년기에 확립해야 하는 과업이자 주체적 확신 상태는 자아정체감(Identity)입니다.')">정답 확인</button>
+            <div id="res16" class="result-box"></div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="quiz-item">
+            <div class="question">17. 보웬의 삼각관계 역동에서 벗어나는 과정이자 보웬 치료 이론의 핵심 목표로, 상담자와의 치료적 삼각관계를 통해 제3자를 개입시키지 않는 건강한 상호작용을 경험하게 하는 기법을 무엇이라 하는가?</div>
+            <input type="text" id="q17" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(17, ['탈삼각화', '탈 삼각화'], '의존적이거나 역기능적인 삼각관계 구조에서 벗어나 분화를 꾀하는 치료 과정을 탈삼각화라고 합니다.')">정답 확인</button>
+            <div id="res17" class="result-box"></div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="quiz-item">
+            <div class="question">18. 보웬의 가족투사과정 중 3단계 행동 특성으로, 부모가 자신의 불안을 자녀에게 극도로 투사하여 자녀를 과잉 염려하거나 부정적으로 대함으로써 자녀의 내면적 미분화를 고착화시키는 현상을 '자녀의 OO'이라고 한다. 빈칸에 들어갈 단어를 쓰시오.</div>
+            <input type="text" id="q18" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(18, ['손상'], '핵가족 정서과정 및 투사과정에서 부모의 불안 집중으로 인해 자녀가 겪게 되는 기능적 부정적 결과를 자녀의 손상이라고 합니다.')">정답 확인</button>
+            <div id="res18" class="result-box"></div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="quiz-item">
+            <div class="question">19. 가족투사과정의 심각도로 인해 자녀에게 물려지는 유산 중 하나로, 인정과 승인을 받고자 하는 과도한 욕구, 타인의 기대를 다루는 것의 어려움, 비난 성향 등 만성불안을 일으키는 관계 속 취약성을 뜻하는 용어는 무엇인가?</div>
+            <input type="text" id="q19" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(19, ['관계 민감도', '관계민감도', '관계에서의 민감도'], '자녀들의 인생에 가장 큰 영향을 미치는 것으로 승인 욕구 및 충동성을 야기하는 요소를 관계 민감도라고 합니다.')">정답 확인</button>
+            <div id="res19" class="result-box"></div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="quiz-item">
+            <div class="question">20. 가계도에서 가족 구성원 간의 관계를 표시할 때, 지그재그 모양의 번개선(또는 물결선) 기호를 사용하여 나타내는 상호작용 관계 패턴은 무엇인가?</div>
+            <input type="text" id="q20" class="short-answer-input" placeholder="정답 입력">
+            <button type="button" class="btn-check" onclick="checkText(20, ['갈등 관계', '갈등관계', '갈등'], '가계도 기호 표에 따르면 번개/물결 모양의 연결선은 가족 구성원 간의 갈등 관계를 의미합니다.')">정답 확인</button>
+            <div id="res20" class="result-box"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 객관식 정답 확인 함수
+    function checkRadio(qNum, correctVal, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const options = document.getElementsByName('q' + qNum);
+        let selected = "";
+        
+        for(let i=0; i<options.length; i++) {
+            if(options[i].checked) {
+                selected = options[i].value;
+                break;
+            }
+        }
+        
+        if(!selected) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.innerHTML = "문제를 선택해 주세요.";
+            return;
+        }
+        
+        resDiv.style.display = "block";
+        if(selected === correctVal) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 고민해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+
+    // 단답형 정답 확인 함수
+    function checkText(qNum, correctArray, expText) {
+        const resDiv = document.getElementById('res' + qNum);
+        const inputVal = document.getElementById('q' + qNum).value.trim();
+        
+        if(!inputVal) {
+            resDiv.style.display = "block";
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "정답을 입력해 주세요.";
+            return;
+        }
+        
+        let isCorrect = correctArray.some(ans => inputVal.toLowerCase() === ans.toLowerCase());
+        
+        resDiv.style.display = "block";
+        if(isCorrect) {
+            resDiv.className = "result-box correct";
+            resDiv.style.backgroundColor = "#d4edda";
+            resDiv.style.color = "#155724";
+            resDiv.style.border = "1px solid #c3e6cb";
+            resDiv.innerHTML = "★ 정답입니다! <div class='explanation'>" + expText + "</div>";
+        } else {
+            resDiv.className = "result-box incorrect";
+            resDiv.style.backgroundColor = "#f8d7da";
+            resDiv.style.color = "#721c24";
+            resDiv.style.border = "1px solid #f5c6cb";
+            resDiv.innerHTML = "작성하신 답은 오답입니다. 다시 확인해 보세요. <div class='explanation'>" + expText + "</div>";
+        }
+    }
+</script>
+
+</body>
+</html>
+
